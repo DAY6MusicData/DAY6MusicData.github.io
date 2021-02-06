@@ -1,0 +1,26 @@
+title:              데이식스 퀵 플레이리스트
+email:              DAY6MusicData@gmail.com
+description:        곧 당신의 재생목록으로 찾아갑니다.
+author:             데이식스 음원자료
+baseurl:            ""
+url:                "https://day6musicdata.github.com"
+
+# Social Profiles
+twitter_username:   DAY6MusicData
+github_username:
+facebook_username:
+instagram_username:
+linkedin_username:
+
+# Add your google-analytics ID here to activate google analytics
+google_analytics:    # out your google-analytics code
+
+# Build settings
+markdown:           kramdown
+permalink:          /:title
+paginate:           10
+paginate_path:      "/playlists/page:num"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
