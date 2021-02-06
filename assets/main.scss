@@ -3,3 +3,25 @@
 ---
 
 @import "styles";
+
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('/assets/fonts/GmarketSansBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    src: local('Gmarket Sans Bold'), local('GmarketSans-Bold');
+}
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('/assets/fonts/GmarketSansMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    src: local('Gmarket Sans Medium'), local('GmarketSans-Medium');
+}
+@font-face {
+    font-family: 'Gmarket Sans';
+    src: url('/assets/fonts/GmarketSansLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    src: local('Gmarket Sans Light'), local('GmarketSans-Light');
+}
