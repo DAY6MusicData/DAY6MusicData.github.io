@@ -82,6 +82,9 @@ layout: default
 
         // song-id
         // 0 - pick
+
+        var varUA = navigator.userAgent.toLowerCase();
+
         var melon_songid[0] = "31927275,31295149,7844372,31927279,30772000,33210835,30771999,32586847,8120285,30399494,32892358,30658626,32115582,32115576,32586850,31149437,32586853,8120284,32115585,30617942,30285386,31149441,30189030,30457472,30232719,7844374,31149438,30658627,32586848,8120286,31481700";
         var genie_songid[0] = "89220627;88233287;84964151;89220631;87591823;91978161;87591822;90194895;86112661;87121534;90756155;87463141;89472166;89472160;90194898;88072514;90194901;86112660;89472169;87415867;86990353;88072518;86866729;87185619;86931930;84964153;88072515;87463142;90194896;86112662;88455413";
         var bugs_songid[0] = "31650949|31225862|4551004|31650953|30872543|32124930|30872542|31908732|30203513|30646155|32006767|30800908|31728999|31728993|31908735|31120687|31908738|30203512|31729002|30772387|30573081|31120691|30511021|30677528|30540153|4551006|31120688|30800909|31908733|30203514|31360122";
@@ -97,8 +100,7 @@ layout: default
         // site = a / theme = b
         function btn_msc(site, theme) {
 
-          var varUA = navigator.userAgent.toLowerCase();
-          var music_site_url;
+          var music_site_url = "https://day6.kr";
 
           if (varUA.indexOf('android') !== -1 || varUA.indexOf("iphone") !== -1 || varUA.indexOf("ipod") !== -1 || varUA.indexOf("ipad") !== -1 ){
             // pop-up
@@ -127,7 +129,7 @@ layout: default
             else if(site == 4) music_site_url = vibe + vibe_songid[theme];
             location.href = music_site_url;
           }
-          else if (varUA.indexOf("iphone") !== -1 ||varUA.indexOf("ipod") !== -1) {
+          else if (varUA.indexOf("iphone") !== -1 || varUA.indexOf("ipod") !== -1) {
             // iphone
             if(site == 1) music_site_url = melon + melon_songid[theme];
             else if(site == 2) music_site_url = genie_iphone + genie_songid[theme];
