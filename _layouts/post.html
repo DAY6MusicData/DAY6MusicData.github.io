@@ -5,8 +5,6 @@ layout: default
 <!-- Page Header -->
 {% if page.background %}
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
 <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
   {% else %}
   <header class="masthead">
@@ -163,6 +161,7 @@ layout: default
               icon: 'error',
               title: '지원하지 않는 디바이스예요.😔'
             })
+            alert('안돼용');
           }
         }
         </script>
