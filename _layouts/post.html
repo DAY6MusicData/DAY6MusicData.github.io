@@ -52,6 +52,23 @@ layout: default
         var url_combine_fb = url_default_fb + url_this_page;
         var url_combine_tw = url_default_tw_txt + document.title + url_default_tw_url + url_this_page;
         var url_combine_naver = url_default_naver + encodeURI(url_this_page) + title_default_naver + encodeURI(title_this_page);
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 2500,
+          timerProgressBar: false,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
+        Toast.fire({
+          icon: 'success',
+          title: '플레이리스트를 성공적으로 담았어요!🎉'
+        })
+        
         </script>
 
         <!-- SNS share buttons -->
@@ -65,6 +82,7 @@ layout: default
         <!-- Naver share button -->
         <a href="" onclick="window.open(url_combine_naver, '', 'scrollbars=no, width=600, height=600'); return false;">
         <img src="/img/socialmedia/naver.png" title="네이버로 공유하기" class="sharebtn_custom" style="width: 48px;"></a>
+
 
         </div>
 
