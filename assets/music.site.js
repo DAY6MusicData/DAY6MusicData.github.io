@@ -23,7 +23,7 @@ function musicsite(site, theme) {
   genie_songid[0] = "89220627;88233287;84964151;89220631;87591823;91978161;87591822;90194895;86112661;87121534;90756155;87463141;89472166;89472160;90194898;88072514;90194901;86112660;89472169;87415867;86990353;88072518;86866729;87185619;86931930;84964153;88072515;87463142;90194896;86112662;88455413";
   bugs_songid[0] = "31650949|31225862|4551004|31650953|30872543|32124930|30872542|31908732|30203513|30646155|32006767|30800908|31728999|31728993|31908735|31120687|31908738|30203512|31729002|30772387|30573081|31120691|30511021|30677528|30540153|4551006|31120688|30800909|31908733|30203514|31360122";
   vibe_songid[0] = "27852478,21712039,5701352,27852482,20121084,44037981,20121086,40319205,6049323,17736000,41909365,19183554,30184806,30165478,40319207,21408915,40319210,6049322,30184811,18939330,16473415,21408917,16035923,17836615,16081363,5701361,21408920,19183552,40319204,6049324,23177552";
-  flo_image[0] = "/playlist/pick.jpg"
+  flo_image[0] = "/playlist/pick.png"
 
   // 4 - love
   melon_songid[4] = "31927275,30771999,30711863,30772000,31295149,30507915,30399494,33210835,31927276,30345503,30233080,30345502";
@@ -39,21 +39,34 @@ function musicsite(site, theme) {
 
   if (mobile){
     // mobile
-    const Toast = Swal.mixin({
-      toast: true,
-      position: 'top',
-      showConfirmButton: false,
-      timer: 2500,
-      timerProgressBar: false,
-      didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-      }
-    })
-    Toast.fire({
-      icon: 'success',
-      title: '좋았어요!🎉'
-    })
+    if(theme == 5){
+      Swal.fire({
+        icon: 'success',
+        title: '발급 완료!🎉',
+        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
+        imageUrl: flo_image[theme],
+        imageHeight: 1000,
+        imageAlt: 'Playlist image',
+        confirmButtonText: '알겠어요!'
+      })
+    }
+    else{
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: false,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'success',
+        title: '좋았어요!🎉'
+      })
+    }
   }
   else {
       // other
@@ -76,24 +89,14 @@ function musicsite(site, theme) {
   }
   var userAgent = navigator.userAgent.toLowerCase();
 
-  if (userAgent.search("android") > -1) {
+  if()
+  else if (userAgent.search("android") > -1) {
     //android
     if(site == 1) music_site_url = melon + melon_songid[theme];
     else if(site == 2) music_site_url = genie_android + genie_songid[theme];
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
     if(site < 5) location.href = music_site_url;
-    else{
-      Swal.fire({
-        icon: 'success',
-        title: '발급 완료!🎉',
-        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
-        imageUrl: flo_image[theme],
-        imageHeight: 1000,
-        imageAlt: 'Playlist image',
-        confirmButtonText: '알겠어요!'
-      })
-    }
   }
   else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1)) {
     // iphone
@@ -102,18 +105,6 @@ function musicsite(site, theme) {
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
     if(site < 5) location.href = music_site_url;
-    else{
-      Swal.fire({
-        icon: 'success',
-        title: '발급 완료!🎉',
-        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
-        imageUrl: flo_image[theme],
-        imageHeight: 1000,
-        imageAlt: 'Playlist image',
-        confirmButtonText: '알겠어요!'
-      })
-    }
-    location.href = music_site_url;
   }
   else if (userAgent.search("ipad") > -1) {
     // ipad
@@ -122,17 +113,5 @@ function musicsite(site, theme) {
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
     if(site < 5) location.href = music_site_url;
-    else{
-      Swal.fire({
-        icon: 'success',
-        title: '발급 완료!🎉',
-        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
-        imageUrl: flo_image[theme],
-        imageHeight: 1000,
-        imageAlt: 'Playlist image',
-        confirmButtonText: '알겠어요!'
-      })
-    }
-    location.href = music_site_url;
   }
 }
