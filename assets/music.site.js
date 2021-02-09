@@ -1,4 +1,4 @@
-function PlaylistFunction(site, theme) {
+function musicsite(site, theme) {
 
   // device 검출
   var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
@@ -27,7 +27,7 @@ function PlaylistFunction(site, theme) {
   // melon : 1 // genie : 2 // bugs : 3 // vibe : 4
   // site = a / theme = b
 
-  var music_site_url = "";
+  var music_site_url;
 
   if (mobile){
     // mobile

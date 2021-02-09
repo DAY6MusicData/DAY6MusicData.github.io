@@ -20,28 +20,127 @@ background: '/img/posts/02.jpg'
   <!-- music-site-button -->
   <div style="width: 100%; text-align: left; margin-bottom: 24px;">
   <!-- melon -->
-  <button class="site-btn" aria-label="Show Playlist" onclick="PlaylistFunction(1, 0);">
+  <button class="site-btn" aria-label="Show Playlist" onclick="musicsite('1','0');">
   <img src="/img/socialmedia/facebook.png" title="멜론" class="sitebtn_custom" style="width: 48px;"></button>
 
   <a href="javascript:void(0);" onclick="Swal.fire('Good job!','You clicked the button!','success');">
   <img src="/img/socialmedia/facebook.png" title="멜론" class="sharebtn_custom" style="width: 48px;"></a>
 
-  <a href="javascript:void(0);" onclick="PlaylistFunction(1,0);"">
+  <a href="javascript:void(0);" onclick="musicsite('1','0');"">
   <img src="/img/socialmedia/facebook.png" title="멜론" class="sharebtn_custom" style="width: 48px;"></a>
   <!-- genie -->
-  <a href="#" onclick="PlaylistFunction(2,0);">
+  <a href="" onclick="musicsite(2,0);">
   <img src="/img/socialmedia/twitter.png" title="지니" class="sharebtn_custom" style="width: 48px;"></a>
   <!-- bugs -->
-  <a href="#" onclick="PlaylistFunction(3,0);">
+  <a href="" onclick="musicsite(3,0);">
   <img src="/img/socialmedia/naver.png" title="벅스" class="sharebtn_custom" style="width: 48px;"></a>
   <!-- vibe -->
-  <a href="#" onclick="PlaylistFunction(4,0);">
+  <a href="" onclick="musicsite(4,0);">
   <img src="/img/socialmedia/naver.png" title="벅스" class="sharebtn_custom" style="width: 48px;"></a>
   <!-- flo -->
   <a href="/playlist/pick.png" return false;">
   <img src="/img/socialmedia/naver.png" title="플로" class="sharebtn_custom" style="width: 48px;"></a>
 
   </div>
+
+  <script>
+  function musicsite(site, theme) {
+
+    // device 검출
+    var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
+
+    // one-click link
+    var melon = "melonapp://play/?ctype=1&menuid=0&cid=";
+    var melon_ipad = "melonipad://play/?ctype=1&menuid=0&cid=";
+    var genie_iphone = "ktolleh00167://landing/?landing_type=31&landing_target=";
+    var genie_android = "cromegenie://scan/?landing_type=31&landing_target=";
+    var bugs = "bugs3://app/tracks/lists?title=전체듣기&miniplay=Y&track_ids=";
+    var vibe = "vibe://listen?version=3&trackIds=";
+
+    // song-id
+    // 0 - pick
+    var melon_songid[0] = "31927275,31295149,7844372,31927279,30772000,33210835,30771999,32586847,8120285,30399494,32892358,30658626,32115582,32115576,32586850,31149437,32586853,8120284,32115585,30617942,30285386,31149441,30189030,30457472,30232719,7844374,31149438,30658627,32586848,8120286,31481700";
+    var genie_songid[0] = "89220627;88233287;84964151;89220631;87591823;91978161;87591822;90194895;86112661;87121534;90756155;87463141;89472166;89472160;90194898;88072514;90194901;86112660;89472169;87415867;86990353;88072518;86866729;87185619;86931930;84964153;88072515;87463142;90194896;86112662;88455413";
+    var bugs_songid[0] = "31650949|31225862|4551004|31650953|30872543|32124930|30872542|31908732|30203513|30646155|32006767|30800908|31728999|31728993|31908735|31120687|31908738|30203512|31729002|30772387|30573081|31120691|30511021|30677528|30540153|4551006|31120688|30800909|31908733|30203514|31360122";
+    var vibe_songid[0] = "27852478,21712039,5701352,27852482,20121084,44037981,20121086,40319205,6049323,17736000,41909365,19183554,30184806,30165478,40319207,21408915,40319210,6049322,30184811,18939330,16473415,21408917,16035923,17836615,16081363,5701361,21408920,19183552,40319204,6049324,23177552";
+
+    // 4 - love
+    var melon_songid[4] = "31927275,30771999,30711863,30772000,31295149,30507915,30399494,33210835,31927276,30345503,30233080,30345502";
+    var genie_songid[4] = "89220627;87591822;87527109;87591823;88233287;87264764;87121534;91978161;89220628;87064419;86931931;87064418";
+    var bugs_songid[4] = "31650949|30872542|30833862|30872543|31225862|30708337|30646155|32124930|31650950|30612024|30540154|30612023";
+    var vibe_songid[4] = "27852478,20121086,19738184,20121084,21712039,18419728,17736000,44037981,27852479,17409156,16081364,17409146";
+
+    // melon : 1 // genie : 2 // bugs : 3 // vibe : 4
+    // site = a / theme = b
+
+    var music_site_url;
+
+    if (mobile){
+      // mobile
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: false,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'success',
+        title: '플레이리스트를 성공적으로 담았어요!🎉'
+      })
+    }
+    else {
+        // other
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: false,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: '지원하지 않는 디바이스예요.😔'
+      })
+    }
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.search("android") > -1) {
+      //android
+      if(site == 1) music_site_url = melon + melon_songid[theme];
+      else if(site == 2) music_site_url = genie_android + genie_songid[theme];
+      else if(site == 3) music_site_url = bugs + bugs_songid[theme];
+      else if(site == 4) music_site_url = vibe + vibe_songid[theme];
+      location.href = music_site_url;
+    }
+    else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1)) {
+      // iphone
+      if(site == 1) music_site_url = melon + melon_songid[theme];
+      else if(site == 2) music_site_url = genie_iphone + genie_songid[theme];
+      else if(site == 3) music_site_url = bugs + bugs_songid[theme];
+      else if(site == 4) music_site_url = vibe + vibe_songid[theme];
+      location.href = music_site_url;
+    }
+    else if (userAgent.search("ipad") > -1) {
+      // ipad
+      if(site == 1) music_site_url = melon_ipad + melon_songid[theme];
+      else if(site == 2) music_site_url = genie_iphone + genie_songid[theme];
+      else if(site == 3) music_site_url = bugs + bugs_songid[theme];
+      else if(site == 4) music_site_url = vibe + vibe_songid[theme];
+      location.href = music_site_url;
+    }
+  }
+  </script>
+
 
   <p><a href="melonapp://play/?ctype=1&menuid=0&cid=31927275,31295149,7844372,31927279,30772000,33210835,30771999,32586847,8120285,30399494,32892358,30658626,32115582,32115576,32586850,31149437,32586853,8120284,32115585,30617942,30285386,31149441,30189030,30457472,30232719,7844374,31149438,30658627,32586848,8120286,31481700">멜론</a> |
   <a href="melonipad://play/?ctype=1&menuid=0&cid=31927275,31295149,7844372,31927279,30772000,33210835,30771999,32586847,8120285,30399494,32892358,30658626,32115582,32115576,32586850,31149437,32586853,8120284,32115585,30617942,30285386,31149441,30189030,30457472,30232719,7844374,31149438,30658627,32586848,8120286,31481700">멜론(iPad)</a> |
