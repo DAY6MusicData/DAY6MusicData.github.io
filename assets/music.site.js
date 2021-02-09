@@ -49,7 +49,7 @@ function musicsite(site, theme) {
     })
     Toast.fire({
       icon: 'success',
-      title: '플레이리스트를 성공적으로 담았어요!🎉'
+      title: '좋았어요!🎉'
     })
   }
   else {
