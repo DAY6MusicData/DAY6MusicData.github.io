@@ -136,3 +136,22 @@ function musicsite(site, theme) {
     location.href = music_site_url;
   }
 }
+
+function site_btn (what_playlist)
+{
+
+  document.write("<div style="width: 100%; text-align: justify; margin-bottom: 24px;">");
+  <!-- melon -->
+  document.write("<a href="#none" onclick="musicsite(1,what_playlist);"><img src="/img/site/melon.png" title="멜론" class="musicsite_btn" style="width: 48px;"></a>");
+  <!-- genie -->
+  document.write("<a href="#none" onclick="musicsite(2,what_playlist);"><img src="/img/site/genie.png" title="지니" class="musicsite_btn" style="width: 48px;"></a>");
+  <!-- bugs -->
+  document.write("<a href="#none" onclick="musicsite(3,what_playlist);"><img src="/img/site/bugs.png" title="벅스" class="musicsite_btn" style="width: 48px;"></a>");
+  <!-- vibe -->
+  document.write("<a href="#none" onclick="musicsite(4,what_playlist);"><img src="/img/site/vibe.png" title="바이브" class="musicsite_btn" style="width: 48px;"></a>");
+  <!-- flo -->
+  document.write("<a href="#none" onclick="musicsite(5,what_playlist);"><img src="/img/site/flo.png" title="플로" class="musicsite_btn" style="width: 48px;"></a>");
+
+  document.write("</div>");
+
+}
