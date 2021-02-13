@@ -2556,6 +2556,7 @@ textarea.form-control {
 
 .s_btn:hover {
   background-position: right  center; /* change the direction of the change here */
+  text-decoration: none;
 }
 
 .s_btn-1 {
