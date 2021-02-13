@@ -40,8 +40,8 @@
 
 .s_btn {
   flex: 1 1 auto;
-  margin: 5px;
-  padding: 12px;
+  margin: 1px;
+  padding: 8px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -61,6 +61,7 @@
 .s_btn:hover {
   background-position: right  center; /* change the direction of the change here */
   text-decoration: none;
+  color: white;
 }
 
 .s_btn-1 {
