@@ -4,26 +4,6 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
- @font-face {
- 	font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 700;
- 	src: local('Gmarket Sans Bold'), local('GmarketSans-Bold'),
- 	url('http://script.ebay.co.kr/fonts/GmarketSansBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
- 	url('http://script.ebay.co.kr/fonts/GmarketSansBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
- }
- @font-face {
- 	font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 500;
- 	src: local('Gmarket Sans Medium'), local('GmarketSans-Medium'),
- 	url('http://script.ebay.co.kr/fonts/GmarketSansMedium.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
- 	url('http://script.ebay.co.kr/fonts/GmarketSansMedium.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
- }
- @font-face {
- 	font-family: 'Gmarket Sans';    font-style: normal;    font-weight: 300;
- 	src: local('Gmarket Sans Light'), local('GmarketSans-Light'),
- 	url('http://script.ebay.co.kr/fonts/GmarketSansLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
- 	url('http://script.ebay.co.kr/fonts/GmarketSansLight.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
- }
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -51,7 +31,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "GmarketSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -74,9 +54,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "GmarketSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #212529;
   text-align: left;
@@ -443,7 +423,7 @@ hr {
 small,
 .small {
   font-size: 80%;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 mark,
@@ -2059,7 +2039,7 @@ pre code {
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
@@ -2545,7 +2525,7 @@ textarea.form-control {
 
 .btn {
   display: inline-block;
-  font-weight: 300;
+  font-weight: 400;
   color: #212529;
   text-align: center;
   vertical-align: middle;
@@ -3144,7 +3124,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-link {
-  font-weight: 300;
+  font-weight: 400;
   color: #007bff;
   text-decoration: none;
 }
@@ -3426,7 +3406,7 @@ input[type="button"].btn-block {
   width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
-  font-weight: 300;
+  font-weight: 400;
   color: #212529;
   text-align: inherit;
   white-space: nowrap;
@@ -3720,7 +3700,7 @@ input[type="button"].btn-block {
   padding: 0.375rem 0.75rem;
   margin-bottom: 0;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #495057;
   text-align: center;
@@ -3956,7 +3936,7 @@ input[type="button"].btn-block {
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 1.75rem 0.375rem 0.75rem;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #495057;
   vertical-align: middle;
@@ -4058,7 +4038,7 @@ input[type="button"].btn-block {
   z-index: 1;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
@@ -6181,9 +6161,9 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "GmarketSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   text-align: left;
   text-align: start;
@@ -6294,9 +6274,9 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "GmarketSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   text-align: left;
   text-align: start;
@@ -10090,7 +10070,7 @@ button.bg-dark:focus {
 }
 
 .font-weight-normal {
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 
 .font-weight-bold {

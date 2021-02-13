@@ -23,7 +23,7 @@ layout: default
       </div>
     </div>
   </header>
-  
+
 
   <div class="container">
     <div class="row">
@@ -32,7 +32,7 @@ layout: default
         {{ content }}
 
         <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
+        {% for post in site.posts limit : 10 %}
 
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
@@ -50,8 +50,8 @@ layout: default
             {{ site.author }}
             {% endif %}
             | 플레이리스트 |
-            {{ post.date | date: '%Y.%m.%d.' }}<!-- &middot; {% include read_time.html content=post.content %} -->
-          </p>
+            {{ post.date | date: '%Y.%m.%d.' }}<!-- &middot; {% include read_time.html content=post.content %}
+          </p> -->
         </article>
 
         <hr>
@@ -59,9 +59,11 @@ layout: default
         {% endfor %}
 
         <!-- Pager -->
+        <!--
         <div class="clearfix">
           <a class="btn btn-primary float-right" href="{{"/playlists" | relative_url }}">View All Playlists &rarr;</a>
         </div>
+        -->
 
       </div>
     </div>

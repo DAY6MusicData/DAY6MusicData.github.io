@@ -4,7 +4,6 @@ layout: default
 
 <!-- Page Header -->
 {% if page.background %}
-
 <header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
   {% else %}
   <header class="masthead">
@@ -51,10 +50,10 @@ layout: default
         var title_this_page = document.title;
         var url_combine_ks = url_default_ks + url_this_page;
         var url_combine_fb = url_default_fb + url_this_page;
-        var url_combine_tw = url_default_tw_txt + document.title + url_default_tw_url + url_this_page;
+        var url_combine_tw = url_default_tw_txt +"마이데이가 알려주는 ─ " + title_this_page + " %23데이식스 %23퀵플레이리스트" + url_default_tw_url + url_this_page;
         var url_combine_naver = url_default_naver + encodeURI(url_this_page) + title_default_naver + encodeURI(title_this_page);
-
         </script>
+
 
         <!-- SNS share buttons -->
         <div style="width: 100%; text-align: right; margin-bottom: 24px;">
@@ -67,6 +66,9 @@ layout: default
         <!-- Naver share button -->
         <a href="" onclick="window.open(url_combine_naver, '', 'scrollbars=no, width=600, height=600'); return false;">
         <img src="/img/socialmedia/naver.png" title="네이버로 공유하기" class="sharebtn_custom" style="width: 48px;"></a>
+
+        </div>
+
 
         <div class="clearfix">
 

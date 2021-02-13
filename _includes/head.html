@@ -1,7 +1,14 @@
 <head>
 
-  <meta property="og:image" content="https://github.com/DAY6MusicData/DAY6MusicData.github.io/blob/master/img/kakao.png?raw=true">
+  <meta property="og:image" content="https://github.com/DAY6MusicData/day6.kr/blob/master/img/kakao.png?raw=true">
   <meta property="og:description" content="순식간에 당신의 재생목록에">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@DAY6MusicData">
+  <meta name="twitter:creator" content="@DAY6MusicData">
+  <meta name="twitter:title" content="데이식스 퀵 플레이리스트">
+  <meta name="twitter:description" content="순식간의 당신의 재생목록에">
+  <meta name="twitter:image" content="https://github.com/DAY6MusicData/day6.kr/blob/master/img/twitter.png?raw=true">
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{site.baseurl}}/assets/favicon-package/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="{{site.baseurl}}/assets/favicon-package/favicon-32x32.png">
@@ -13,9 +20,15 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<!--
   <title>
     {% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}
+    {% else %}{{ site.title | escape }}{% endif %}
+  </title>
+-->
+
+  <title>
+    {% if page.title %}{{ page.title | escape }}
     {% else %}{{ site.title | escape }}{% endif %}
   </title>
 
