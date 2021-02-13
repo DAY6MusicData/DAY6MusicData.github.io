@@ -25,3 +25,55 @@
   font-size: 16px;
   padding: 25px 35px;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.s_btn {
+  flex: 1 1 auto;
+  margin: 5px;
+  padding: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.3s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 50px;
+  text-decoration:none;
+ }
+
+/* Demo Stuff End -> */
+
+/* <- Magic Stuff Start */
+
+.s_btn:hover {
+  background-position: right  center; /* change the direction of the change here */
+}
+
+.s_btn-1 {
+  background-image: linear-gradient(to right, #020f75 0%, #114bb5 51%, #6b46ab 100%);
+}
+
+.s_btn-2 {
+  background-image: linear-gradient(to right, #154eb7 0%, #6b46ab 51%, #c85c9b 100%);
+}
+
+.s_btn-3 {
+  background-image: linear-gradient(to right, #7346a9 0%, #c85c9b 51%, #ec646f 100%);
+}
+
+.s_btn-4 {
+  background-image: linear-gradient(to right, #cd5d98 0%, #ec646f 51%, #ef9a47 100%);
+}
+
+.s_btn-5 {
+  background-image: linear-gradient(to right, #ed676c 0%, #ef9a47 51%, #fe9917 100%);
+}
