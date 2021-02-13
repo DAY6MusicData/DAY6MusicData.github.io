@@ -2529,6 +2529,7 @@ textarea.form-control {
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+  width: 95vw;
   margin: 0 auto;
   margin-bottom: 24px;
 }
@@ -2539,14 +2540,15 @@ textarea.form-control {
   padding: 12px;
   text-align: center;
   text-transform: uppercase;
-  transition: 0.3s;
+  transition: 0.5s;
   background-size: 200% auto;
   color: white;
- /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
   box-shadow: 0 0 20px #eee;
   border-radius: 50px;
-  text-decoration:none;
+  text-decoration: none;
  }
+
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
 
 /* Demo Stuff End -> */
 
