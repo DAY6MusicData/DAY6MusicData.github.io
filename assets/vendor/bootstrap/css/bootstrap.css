@@ -2529,6 +2529,7 @@ textarea.form-control {
   align-items: center;
   align-content: center;
   flex-wrap: wrap;
+  margin: 0 auto;
   margin-bottom: 24px;
 }
 
