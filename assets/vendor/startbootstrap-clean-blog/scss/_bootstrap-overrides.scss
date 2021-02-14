@@ -5,19 +5,19 @@
   padding: 15px 25px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-radius: 0;
+  border-radius: 50px;
   @include sans-serif-font;
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+  background-color: #e69c70;
+  border-color: #e2996e;
   &:hover,
   &:focus,
   &:active {
     color: $white;
-    background-color: darken($primary, 7.5) !important;
-    border-color: darken($primary, 7.5) !important;
+    background-color: darken(#e69c70, 7.5) !important;
+    border-color: darken(#e2996e, 7.5) !important;
   }
 }
 
@@ -47,8 +47,8 @@
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-  // box-shadow: 0 0 20px #eee;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px #ddd;
   border-radius: 50px;
   text-decoration: none;
  }
@@ -61,24 +61,51 @@
   background-position: right  center; /* change the direction of the change here */
   text-decoration: none;
   color: white;
+  box-shadow: 0 5px 20px #bbb;
 }
 
 .s_btn-1 {
-  background-image: linear-gradient(to right, #020f75 0%, #114bb5 51%, #6b46ab 100%);
+  background-image: linear-gradient(to right, #faaca8 0%, #f7b0b0 51%, #ee6a96 100%);
 }
 
 .s_btn-2 {
-  background-image: linear-gradient(to right, #154eb7 0%, #6b46ab 51%, #c85c9b 100%);
+  background-image: linear-gradient(to right, #f7b0b0 0%, #f3b6ba 51%, #ee6a96 100%);
 }
 
 .s_btn-3 {
-  background-image: linear-gradient(to right, #7346a9 0%, #c85c9b 51%, #ec646f 100%);
+  background-image: linear-gradient(to right, #f3b6ba 0%, #eebdc6 51%, #ee6a96 100%);
 }
 
 .s_btn-4 {
-  background-image: linear-gradient(to right, #cd5d98 0%, #ec646f 51%, #ef9a47 100%);
+  background-image: linear-gradient(to right, #eebdc6 0%, #e9c4d4 51%, #ee6a96 100%);
 }
 
 .s_btn-5 {
-  background-image: linear-gradient(to right, #ed676c 0%, #ef9a47 51%, #fe9917 100%);
+  background-image: linear-gradient(to right, #e9c4d4 0%, #e4cce1 51%, #ee6a96 100%);
 }
+
+.m_btn {
+  flex: 1 1 auto;
+  margin: 2px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px #ddd;
+  border-radius: 50px;
+  text-decoration: none;
+ }
+
+ .m_btn:hover {
+   background-position: right  center; /* change the direction of the change here */
+   text-decoration: none;
+   color: white;
+   box-shadow: 0 5px 20px #bbb;
+ }
+
+ .m_btn-1 {
+   background-image: linear-gradient(to right, #faaca8 0%, #f7b0b0 51%, #ee6a96 100%);
+ }
