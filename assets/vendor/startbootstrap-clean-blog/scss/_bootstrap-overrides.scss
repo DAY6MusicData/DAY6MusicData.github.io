@@ -99,6 +99,11 @@
   text-decoration: none;
  }
 
+ .m_btn:hover {
+   text-decoration: none;
+   box-shadow: 0 5px 20px #bbb;
+ }
+
  .m_btn-1 {
    background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
    animation: animatedgradient 6s ease infinite;

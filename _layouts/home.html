@@ -33,7 +33,7 @@ layout: default
           <h1>DAY6 Support Playlist</h1>
           <span class="subheading">데이식스를 서포트하는 가장 쉬운 방법</span>
           <div style="width: 40%; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap; margin: 0 auto; margin-top: 10px; display: flex;">
-            <a href="/all" class="m_btn m_btn-1">담으러 가기🔥</a></div>
+            <a href="/support" class="m_btn m_btn-1">담으러 가기🔥</a></div>
         </div>
       </div>
     </div>
@@ -52,33 +52,11 @@ layout: default
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h3 class="post-title">{{ post.title }}</h3>
-            <!-- {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-            {% endif %}
-          </a>
-          <p class="post-meta">
-            <!-- {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            | 플레이리스트 |
-            {{ post.date | date: '%Y.%m.%d.' }}<!-- &middot; {% include read_time.html content=post.content %}
-          </p> -->
         </article>
 
         <hr>
 
         {% endfor %}
-
-        <!-- Pager -->
-        <!--
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/playlists" | relative_url }}">View All Playlists &rarr;</a>
-        </div>
-        -->
 
       </div>
     </div>
