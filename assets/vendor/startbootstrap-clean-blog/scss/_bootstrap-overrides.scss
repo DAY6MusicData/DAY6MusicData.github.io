@@ -44,7 +44,64 @@
   padding: 5px;
   text-align: center;
   text-transform: uppercase;
-  transition: 0.5s;
+  transition: 1s;
+  background-size: 200% auto;
+  color: #333;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 15px #eee;
+  border-radius: 50px;
+  text-decoration: none;
+  border: 1px solid #888;
+  background-size: 400% 400%;
+ }
+
+.s_btn:hover {
+  background-position: right  center;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 5px 20px #bbb;
+  border: 1px solid #fff;
+}
+
+.s_btn-1 {
+  background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 25%, #4ce8b3 51%, #24d792 75%, #19af37 100%);
+}
+
+.s_btn-2 {
+  background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 25%, #6cc2ff 51%, #58aeff 75%, #448aff 100%);
+}
+
+.s_btn-3 {
+  background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 25%, #ffbd1e 51%, #f73240 75%, #c30097 100%);
+}
+
+.s_btn-4 {
+  background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 25%, #fd0c2b 51%, #a804ae 75%, #7a01f3 100%);
+}
+
+.s_btn-5 {
+  background-image: linear-gradient(to right, #f9f9f9 0%, #f9f9f9 25%, #d395ff 51%, #573bff 75%, #3b3bff 100%);
+}
+
+.p_container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 2px;
+}
+
+.p_btn {
+  flex: 1 1 auto;
+  margin: 2px;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 1s;
   background-size: 200% auto;
   color: white;
   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
@@ -53,54 +110,30 @@
   text-decoration: none;
  }
 
-/* Demo Stuff End -> */
-
-/* <- Magic Stuff Start */
-
-.s_btn:hover {
-  background-position: right  center; /* change the direction of the change here */
+.p_btn:hover {
+  background-position: right  center;
   text-decoration: none;
   color: white;
   box-shadow: 0 5px 20px #bbb;
 }
 
-.s_btn-1 {
-  background-image: linear-gradient(to right, #faaca8 0%, #f7b0b0 51%, #ee6a96 100%);
+.p_btn-1 {
+  background-image: linear-gradient(to right, #000e73 0%, #314cb3 51%, #7d49a7 100%);
 }
 
-.s_btn-2 {
-  background-image: linear-gradient(to right, #f7b0b0 0%, #f3b6ba 51%, #ee6a96 100%);
-}
-
-.s_btn-3 {
-  background-image: linear-gradient(to right, #f3b6ba 0%, #eebdc6 51%, #ee6a96 100%);
-}
-
-.s_btn-4 {
-  background-image: linear-gradient(to right, #eebdc6 0%, #e9c4d4 51%, #ee6a96 100%);
-}
-
-.s_btn-5 {
-  background-image: linear-gradient(to right, #e9c4d4 0%, #e4cce1 51%, #ee6a96 100%);
-}
-
-.s_btn-6 {
-  background-image: linear-gradient(to right, #000e73 0%, #314cb3 51%, #4a4db8 100%);
-}
-
-.s_btn-7 {
+.p_btn-2 {
   background-image: linear-gradient(to right, #344bb2 0%, #af559d 51%, #e25d8a 100%);
 }
 
-.s_btn-8 {
+.p_btn-3 {
   background-image: linear-gradient(to right, #b2569d 0%, #f1795e 51%, #f09d44 100%);
 }
 
-.s_btn-9 {
+.p_btn-4 {
   background-image: linear-gradient(to right, #000e73 0%, #154eb7 25%, #7346a9 50%, #cd5d98 100%);
 }
 
-.s_btn-10 {
+.p_btn-5 {
   background-image: linear-gradient(to right, #7346a9 0%, #cd5d98 25%, #f1795e 50%, #f09d44 100%);
 }
 
