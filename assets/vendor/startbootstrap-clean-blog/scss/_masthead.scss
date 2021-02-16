@@ -66,8 +66,8 @@ header.masthead {
       display: block;
     }
     .subheading {
-      font-size: 24px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 300;
       margin: 10px 0 0;
       @include sans-serif-font;
     }
@@ -83,10 +83,10 @@ header.masthead {
     }
     @media only screen and (min-width: 768px) {
       h1 {
-        font-size: 42px;
+        font-size: 38px;
       }
       .subheading {
-        font-size: 28px;
+        font-size: 24px;
       }
     }
   }
