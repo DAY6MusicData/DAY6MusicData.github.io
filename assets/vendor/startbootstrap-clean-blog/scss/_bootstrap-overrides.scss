@@ -39,7 +39,7 @@
 }
 
 .s_btn {
-  flex: 1;
+  flex: 1 1 auto;
   margin: 2px;
   padding: 5px;
   text-align: center;
@@ -94,7 +94,7 @@
 }
 
 .p_btn {
-  flex: 1;
+  flex: 1 1 auto;
   margin: 2px;
   padding: 5px;
   text-align: center;
@@ -150,7 +150,6 @@
   margin: 2px;
   padding: 10px;
   text-align: center;
-  text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
