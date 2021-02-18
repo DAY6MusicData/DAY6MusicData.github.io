@@ -41,7 +41,7 @@
 .s_btn {
   flex: 1 1 auto;
   margin: 2px;
-  padding: 5px;
+  padding: 4px;
   text-align: center;
   transition: 1s;
   background-size: 400% 400%;
@@ -53,11 +53,11 @@
  }
 
 .s_btn:hover {
-  background-position: right  center;
+  background-position: 99%  center;
   text-decoration: none;
   color: white;
   box-shadow: 0 5px 20px #bbb;
-  border: 1px solid #fff;
+  border: 1px solid transparent;
   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 

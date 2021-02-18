@@ -145,7 +145,7 @@ function musicsite(site, theme) {
         imageHeight: 700,
         imageAlt: 'Playlist image',
         confirmButtonText: '알겠어요!',
-        footer: '<a href="https://day6.kr/intro" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
+        footer: '<a href="https://day6.kr/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       })
     }
   }
