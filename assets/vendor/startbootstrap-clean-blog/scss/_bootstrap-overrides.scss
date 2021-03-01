@@ -60,6 +60,7 @@
   border: 1px solid transparent;
   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
+.s_btn:focus { outline: none; }
 
 .s_btn-1 {
   background-image: linear-gradient(to right, #fff 0%, #fff 25%, #4ce8b3 51%, #24d792 75%, #19af37 100%);
@@ -114,6 +115,8 @@
   box-shadow: 0 5px 20px #bbb;
 }
 
+.p_btn:focus { outline: none; }
+
 .p_btn-1 {
   background-image: linear-gradient(to right, #000e73 0%, #314cb3 51%, #7d49a7 100%);
 }
@@ -159,37 +162,24 @@
   text-decoration: none;
  }
 
- .m_btn:hover {
-   text-decoration: none;
-   color: white;
-   box-shadow: 0 5px 20px #999;
- }
+.m_btn:hover {
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 5px 20px #999;
+}
 
- .m_btn-1 {
-   background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-   animation: animatedgradient 6s ease infinite;
-   background-size: 400% 400%;
- }
-
-@keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+.m_btn-1 {
+  background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  animation: animatedgradient 6s ease infinite;
+  background-size: 400% 400%;
 }
 
 .banner_btn {
   flex: 1 1 auto;
   margin: 2px;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
   text-transform: uppercase;
-  font-size: 18px;
   transition: 3s;
   background-size: 200% auto;
   color: white;
@@ -197,7 +187,7 @@
   box-shadow: 0 3px 5px #eee;
   border-radius: 15px;
   text-decoration: none;
- }
+}
 
 .banner_btn:hover {
   background-position: right  center;
@@ -222,4 +212,17 @@
   background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
   animation: animatedgradient 6s ease infinite;
   background-size: 400% 400%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
