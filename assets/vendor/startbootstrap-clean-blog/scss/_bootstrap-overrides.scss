@@ -162,6 +162,8 @@
   box-shadow: 0 5px 15px #555;
   border-radius: 50px;
   text-decoration: none;
+  border: 0;
+  outline: 0;
  }
 
 .m_btn:hover {
@@ -169,6 +171,8 @@
   color: white;
   box-shadow: 0 5px 20px #999;
 }
+
+.m_btn:focus { outline: none; }
 
 .m_btn-1 {
   background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
@@ -199,6 +203,8 @@
   color: white;
   box-shadow: 0 3px 5px #ccc;
 }
+
+.banner_btn:focus { outline: none; }
 
 .banner_btn-1 {
   background-image: linear-gradient(to right, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
