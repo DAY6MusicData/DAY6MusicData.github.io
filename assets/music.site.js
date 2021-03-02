@@ -130,7 +130,7 @@ function musicsite(site, theme) {
   var icon = ["error", "success"];
   var title = ["지원하지 않는 디바이스예요.😥", "플레이리스트 생성 완료!🎉"];
 
-  if ( ( mobile && site < 5 ) || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 && site < 5 ) || site < 3 ) ok = 1; // site test
+  if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) || site < 3 ) ok = 1; // site test
   else ok = 0;
 
   const Toast = Swal.mixin({
