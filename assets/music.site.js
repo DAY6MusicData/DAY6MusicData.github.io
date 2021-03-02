@@ -148,7 +148,7 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
-  if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ){
+  if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
     // site 1 - 4 case
     if(site == 1){
       if (userAgent.search("ipad") > -1 || navigator.platform === 'MacIntel') music_site_url = melon_ipad + melon_songid[theme];
