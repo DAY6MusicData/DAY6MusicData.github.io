@@ -1,17 +1,22 @@
 function musicsite(site, theme) {
-
-  // device
+  // device test
   var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
   var userAgent = navigator.userAgent.toLowerCase();
 
   // one-click link
   var melon = "melonapp://play/?ctype=1&menuid=0&cid=";
   var melon_ipad = "melonipad://play/?ctype=1&menuid=0&cid=";
+  var melon_win = "melonapp://play?cType=1&cList=";
+  var melon_mac_1 = "melonplayer://play?ref=&cid=";
+  var melon_mac_2 = "&cflag=1";
   var genie_iphone = "ktolleh00167://landing/?landing_type=31&landing_target=";
   var genie_android = "cromegenie://scan/?landing_type=31&landing_target=";
   var genie_web = "https://www.genie.co.kr/player/shareProcessV2?xgnm=";
   var bugs = "bugs3://app/tracks/lists?title=전체듣기&miniplay=Y&track_ids=";
+  var bugs_mac_1 = "bugs3://app/tracks/";
+  var bugs_mac_2 = "?autoplay=Y";
   var vibe = "vibe://listen?version=3&trackIds=";
+  var music_site_url;
 
   // song-id
   var melon_songid = new Array();
@@ -94,25 +99,45 @@ function musicsite(site, theme) {
   vibe_songid[10] = "16035922,16035923,16081363,16081364,16473414,16473415,17409146,17409156,17735999,17736000,17836612,17836615,17836617,17836625,18419728,18419729,18676775,18676777,18939330,18939331,19183554,19183552,19738258,19738184,20121086,20121084,20121097";
   flo_image[10] = "/playlist/every-day6.gif";
 
+  melon_songid[11] = "33210835,30345502,30566474,31927276,30233080,31295149,30399494,31412373,32892360,30507915,33116872,32892356,32586847,30566475,8120282,31927274,30345503";
+  genie_songid[11] = "91978161;87064418;87359516;89220628;86931931;88233287;87121534;88362467;90756157;87264764;91565584;90756153;90194895;87359517;86089284;89220626;87064419";
+  bugs_songid[11] = "32124930|30612023|30742600|31650950|30540154|31225862|30646155|31304162|32006769|30708337|6029882|32006765|31908732|30742601|30203510|31650948|30612024";
+  vibe_songid[11] = "44037981,17409146,18676775,27852479,16081364,21712039,17736000,22531444,41909366,18419728,43626549,41909363,40319205,18676777,6049320,27852477,17409156";
+  flo_image[11] = "/playlist/spring.gif";
+
+  melon_songid[12] = "31927275,7844372,30711863,7844376,32115575,31149438,8120285,8120283,32115579,7844373,8120286,30457471,31927277,32892356,31149439,30345503,30399493";
+  genie_songid[12] = "89220627;84964151;87527109;84964155;89472159;88072515;86112661;86089285;89472163;84964152;86112662;87185618;89220629;90756153;88072516;87064419;87121533";
+  bugs_songid[12] = "31650949|4551004|30833862|4551008|31728992|31120688|30203513|30203511|31728996|4551005|30203514|30677527|31650951|32006765|31120689|30612024|30646154";
+  vibe_songid[12] = "27852478,5701352,19738184,5701349,30184802,21408920,6049323,6049321,30184808,5701356,6049324,17836612,27852481,41909363,21408916,17409156,17735999";
+  flo_image[12] = "/playlist/summer.gif";
+
+  melon_songid[13] = "30617942,31149441,32586853,30285386,32586849,30232719,30457476,7844377,32115582,7844374,30617943,30658626,32892360,30507915,32115580,32586848,31431163,31481699";
+  genie_songid[13] = "87415867;88072518;90194901;86990353;90194897;86931930;87185623;84964156;89472166;84964153;87415868;87463141;90756157;87264764;89472164;90194896;88389337;88455412";
+  bugs_songid[13] = "30772387|31120691|31908738|30573081|31908734|30540153|30677532|4551009|31728999|4551006|30772388|30800908|32006769|30708337|31728997|31908733|31318643|31360121";
+  vibe_songid[13] = "18939330,21408917,40319210,16473415,40319206,16081363,17836617,5701354,30184806,5701361,18939331,19183554,41909366,18419728,30184804,40319204,22886295,23177550";
+  flo_image[13] = "/playlist/fall.gif";
+
+  melon_songid[14] = "30189030,32586849,32115585,30232719,31431163,30772000,31927279,30771999,31481700,30457472,30399494,31927274,31927278,8120284,32892360,33116872,32892358,31481704,30772011";
+  genie_songid[14] = "86866729;90194897;89472169;86931930;88389337;87591823;89220631;87591822;88455413;87185619;87121534;89220626;89220630;86112660;90756157;91565584;90756155;88455417;87591834";
+  bugs_songid[14] = "30511021|31908734|31729002|30540153|31318643|30872543|31650953|30872542|31360122|30677528|30646155|31650948|31650952|30203512|32006769|6029882|32006767|31360126|30872554";
+  vibe_songid[14] = "16035923,40319206,30184811,16081363,22886295,20121084,27852482,20121086,23177552,17836615,17736000,27852477,27852480,6049322,41909366,43626549,41909365,23177562,20121097";
+  flo_image[14] = "/playlist/winter.gif";
 
   // melon : 1 // genie : 2 // bugs : 3 // vibe : 4 // flo : 5
   // site = a / theme = b
-
-  var music_site_url;
 
   var ok = 0;
   var icon = ["error", "success"];
   var title = ["지원하지 않는 디바이스예요.😥", "좋았어요!🎉"];
 
-  if ( ( mobile && site < 5 ) || site == 2) ok = 1;
+  if ( ( mobile && site < 5 ) || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 && site < 5 ) || site < 3 ) ok = 1; // site test
   else ok = 0;
 
   const Toast = Swal.mixin({
     toast: true,
-    position: 'top',
+    position: 'top-end',
     showConfirmButton: false,
     timer: 2500,
-    timerProgressBar: false,
     didOpen: (toast) => {
       toast.addEventListener('mouseenter', Swal.stopTimer)
       toast.addEventListener('mouseleave', Swal.resumeTimer)
@@ -123,10 +148,10 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
-  if (mobile){
+  if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ){
     // site 1 - 4 case
     if(site == 1){
-      if (userAgent.search("ipad") > -1) music_site_url = melon_ipad + melon_songid[theme];
+      if (userAgent.search("ipad") > -1 || navigator.platform === 'MacIntel') music_site_url = melon_ipad + melon_songid[theme];
       else music_site_url = melon + melon_songid[theme];
     }
     else if(site == 2){
@@ -145,10 +170,16 @@ function musicsite(site, theme) {
         imageHeight: 700,
         imageAlt: 'Playlist image',
         confirmButtonText: '알겠어요!',
-        footer: '<a href="https://day6.kr/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
+        footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       })
     }
   }
-  else
-    if(site == 2) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+  else{
+    if(site == 1){
+      if (userAgent.search("macintosh") > -1) music_site_url = melon_mac_1 + melon_songid[theme] + melon_mac_2;
+      else music_site_url = melon_win + melon_songid[theme];
+    }
+    else if(site == 2) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+    if(site == 1) location.href = music_site_url;
+  }
 }
