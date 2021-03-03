@@ -170,6 +170,18 @@ function musicsite(site, theme) {
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
     if(site < 5 && theme != 51)  location.href = music_site_url;
+    else if (site == 5 && theme != 51){
+      Swal.fire({
+        icon: 'success',
+        title: '생성 완료!🎉',
+        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
+        imageUrl: flo_image[theme],
+        imageHeight: 700,
+        imageAlt: 'Playlist image',
+        confirmButtonText: '알겠어요!',
+        footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
+      });
+    }
     if (site == 1 && theme == 51){
       Swal.fire({
         icon: 'success',
@@ -257,18 +269,6 @@ function musicsite(site, theme) {
           location.href = '/supportguide#플로-스트리밍-가이드';
         }
       })
-    }
-    else if (site == 5){
-      Swal.fire({
-        icon: 'success',
-        title: '생성 완료!🎉',
-        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
-        imageUrl: flo_image[theme],
-        imageHeight: 700,
-        imageAlt: 'Playlist image',
-        confirmButtonText: '알겠어요!',
-        footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
-      });
     }
   }
   else{
