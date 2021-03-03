@@ -178,8 +178,8 @@ function musicsite(site, theme) {
         confirmButtonText: '좋아요!',
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = music_site_url;
           location.href = '/supportguide#멜론-스트리밍-가이드';
+          location.href = music_site_url;
         }
       })
     }
@@ -191,8 +191,8 @@ function musicsite(site, theme) {
         confirmButtonText: '좋아요!',
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = music_site_url;
           location.href = '/supportguide#지니-스트리밍-가이드';
+          location.href = music_site_url;
         }
       })
     }
@@ -204,8 +204,8 @@ function musicsite(site, theme) {
         confirmButtonText: '좋아요!',
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = music_site_url;
           location.href = '/supportguide#벅스-스트리밍-가이드';
+          location.href = music_site_url;
         }
       })
     }
@@ -217,8 +217,8 @@ function musicsite(site, theme) {
         confirmButtonText: '좋아요!',
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = music_site_url;
           location.href = '/supportguide#바이브-스트리밍-가이드';
+          location.href = music_site_url;
         }
       })
     }
@@ -234,7 +234,6 @@ function musicsite(site, theme) {
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = music_site_url;
           location.href = '/supportguide#플로-스트리밍-가이드';
         }
       })
