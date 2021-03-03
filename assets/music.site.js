@@ -237,7 +237,7 @@ function musicsite(site, theme) {
       else music_site_url = melon_win + melon_songid[theme];
       location.href = music_site_url;
     }
-    else if(site == 2 && theme != 51) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+    else if(site == 2) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
     if(site == 1 && theme == 51){
       Swal.fire({
         icon: 'success',
