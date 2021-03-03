@@ -275,26 +275,44 @@ function musicsite(site, theme) {
     if(site == 1){
       if (userAgent.search("macintosh") > -1) music_site_url = melon_mac_1 + melon_songid[theme] + melon_mac_2;
       else music_site_url = melon_win + melon_songid[theme];
-      location.href = music_site_url;
+      if (theme != 51) location.href = music_site_url;
     }
-    else if(site == 2) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+    else if(site == 2) if (theme != 51) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
     if(site == 1 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: '멜론 플레이리스트 생성 완료!',
-        text: '데이식스를 서포트하러 가볼까요?🍋',
-        confirmButtonText: '좋아요!',
-        footer: '<a href="/support#멜론-스트리밍-가이드"" style="color:#28acff">멜론 스트리밍 가이드 보러가기</a>'
-      });
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        showDenyButton: true,
+        confirmButtonText: '바로 담기',
+        denyButtonText: '가이드 보기',
+        confirmButtonColor: '#aaa',
+        denyButtonColor: '#3085d6',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.href = music_site_url;
+        } else if (result.isDenied) {
+          location.href = '/supportguide#멜론-스트리밍-가이드';
+        }
+      })
     }
     else if(site == 2 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: '지니 플레이리스트 생성 완료!',
-        text: '데이식스를 서포트하러 가볼까요?🍋',
-        confirmButtonText: '좋아요!',
-        footer: '<a href="/support#지니-스트리밍-가이드"" style="color:#28acff">지니 스트리밍 가이드 보러가기</a>'
-      });
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        showDenyButton: true,
+        confirmButtonText: '바로 담기',
+        denyButtonText: '가이드 보기',
+        confirmButtonColor: '#aaa',
+        denyButtonColor: '#3085d6',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+        } else if (result.isDenied) {
+          location.href = '/supportguide#지니-스트리밍-가이드';
+        }
+      })
     }
   }
 }
