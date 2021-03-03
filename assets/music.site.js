@@ -170,7 +170,7 @@ function musicsite(site, theme) {
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
     if(site < 5)  location.href = music_site_url;
-    else if (site == 1 && theme == 51){
+    if (site == 1 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: '멜론 플레이리스트 생성 완료!',
