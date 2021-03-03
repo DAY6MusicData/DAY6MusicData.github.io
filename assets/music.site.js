@@ -18,6 +18,21 @@ function musicsite(site, theme) {
   var vibe = "vibe://listen?version=3&trackIds=";
   var music_site_url;
 
+  var guide_site = new Array();
+  var msg = new Array();
+
+  guide_site[1] = "#멜론-스트리밍-가이드"
+  guide_site[2] = "#지니-스트리밍-가이드"
+  guide_site[3] = "#벅스-스트리밍-가이드"
+  guide_site[4] = "#바이브-스트리밍-가이드"
+  guide_site[5] = "#플로-스트리밍-가이드"
+
+  msg[1] = "멜론 플레이리스트 생성 완료!"
+  msg[2] = "지니 플레이리스트 생성 완료!"
+  msg[3] = "벅스 플레이리스트 생성 완료!"
+  msg[4] = "바이브 플레이리스트 생성 완료!"
+  msg[5] = "플로 플레이리스트 생성 완료!"
+
   // song-id
   var melon_songid = new Array();
   var genie_songid = new Array();
@@ -123,6 +138,12 @@ function musicsite(site, theme) {
   vibe_songid[14] = "16035923,40319206,30184811,16081363,22886295,20121084,27852482,20121086,23177552,17836615,17736000,27852477,27852480,6049322,41909366,43626549,41909365,23177562,20121097";
   flo_image[14] = "/playlist/winter.gif";
 
+  melon_songid[51] = "30189030,32586849,32115585,30232719,31431163,30772000,31927279,30771999,31481700,30457472,30399494,31927274,31927278,8120284,32892360,33116872,32892358,31481704,30772011";
+  genie_songid[51] = "86866729;90194897;89472169;86931930;88389337;87591823;89220631;87591822;88455413;87185619;87121534;89220626;89220630;86112660;90756157;91565584;90756155;88455417;87591834";
+  bugs_songid[51] = "30511021|31908734|31729002|30540153|31318643|30872543|31650953|30872542|31360122|30677528|30646155|31650948|31650952|30203512|32006769|6029882|32006767|31360126|30872554";
+  vibe_songid[51] = "16035923,40319206,30184811,16081363,22886295,20121084,27852482,20121086,23177552,17836615,17736000,27852477,27852480,6049322,41909366,43626549,41909365,23177562,20121097";
+  flo_image[51] = "/playlist/winter.gif";
+
   // melon : 1 // genie : 2 // bugs : 3 // vibe : 4 // flo : 5
   // site = a / theme = b
 
@@ -160,7 +181,33 @@ function musicsite(site, theme) {
     }
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
-    if(site < 5)  location.href = music_site_url;
+    if(site < 5 && theme != 51 )  location.href = music_site_url;
+    else if (site < 5 && theme == 51 ){
+      Swal.fire({
+        icon: 'success',
+        title: msg[site],
+        text: '서포트 플레이리스트를 담을까요?🍋',
+         confirmButtonText:
+          '담을래요!',
+        footer: '<a href="#none" onclick="location.href = guide_site[site];" style="color:#28acff">스트리밍 가이드 보러가기</a>'
+      }, function(isConfirm) {
+        if (isConfirm) {
+          location.href = music_site_url;
+        }
+      });
+    }
+    else if (site < 5 && theme == 51){
+      Swal.fire({
+        icon: 'success',
+        title: msg[site],
+        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
+        imageUrl: flo_image[theme],
+        imageHeight: 700,
+        imageAlt: 'Playlist image',
+        confirmButtonText: '알겠어요!',
+        footer: '<a href="#플로-스트리밍-가이드" style="color:#28acff">스트리밍 가이드 보러가기</a>'
+      })
+    }
     else{
       Swal.fire({
         icon: 'success',
