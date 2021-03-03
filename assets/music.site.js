@@ -176,12 +176,12 @@ function musicsite(site, theme) {
         title: '멜론 플레이리스트 생성 완료!',
         text: '데이식스를 서포트하러 가볼까요?🍋',
         confirmButtonText: '좋아요!',
-      }, function(isConfirm) {
-			if (isConfirm) {
-				location.href = music_site_url;
-        location.href = '/supportguide#멜론-스트리밍-가이드';
-			}else{}
-		});
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.href = music_site_url;
+          location.href = '/supportguide#멜론-스트리밍-가이드';
+        }
+      })
     }
     else if (site == 2 && theme == 51){
       Swal.fire({
@@ -189,12 +189,12 @@ function musicsite(site, theme) {
         title: '지니 플레이리스트 생성 완료!',
         text: '데이식스를 서포트하러 가볼까요?🍋',
         confirmButtonText: '좋아요!',
-      }, function(isConfirm) {
-			if (isConfirm) {
-				location.href = music_site_url;
-        location.href = '/supportguide#지니-스트리밍-가이드';
-			}else{}
-		});
+      }.then((result) => {
+        if (result.isConfirmed) {
+          location.href = music_site_url;
+          location.href = '/supportguide#지니-스트리밍-가이드';
+        }
+      })
     }
     else if (site == 3 && theme == 51){
       Swal.fire({
@@ -202,12 +202,12 @@ function musicsite(site, theme) {
         title: '벅스 플레이리스트 생성 완료!',
         text: '데이식스를 서포트하러 가볼까요?🍋',
         confirmButtonText: '좋아요!',
-      }, function(isConfirm) {
-			if (isConfirm) {
-				location.href = music_site_url;
-        location.href = '/supportguide#벅스-스트리밍-가이드';
-			}else{}
-		});
+      }.then((result) => {
+        if (result.isConfirmed) {
+          location.href = music_site_url;
+          location.href = '/supportguide#벅스-스트리밍-가이드';
+        }
+      })
     }
     else if (site == 4 && theme == 51){
       Swal.fire({
@@ -215,12 +215,12 @@ function musicsite(site, theme) {
         title: '바이브 플레이리스트 생성 완료!',
         text: '데이식스를 서포트하러 가볼까요?🍋',
         confirmButtonText: '좋아요!',
-      }, function(isConfirm) {
-			if (isConfirm) {
-				location.href = music_site_url;
-        location.href = '/supportguide#바이브-스트리밍-가이드';
-			}else{}
-		});
+      }.then((result) => {
+        if (result.isConfirmed) {
+          location.href = music_site_url;
+          location.href = '/supportguide#바이브-스트리밍-가이드';
+        }
+      })
     }
     else if (site == 5 && theme == 51){
       Swal.fire({
@@ -232,12 +232,11 @@ function musicsite(site, theme) {
         imageAlt: 'Playlist image',
         confirmButtonText: '알겠어요!',
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
-      }, function(isConfirm) {
-			if (isConfirm) {
-				location.href = music_site_url;
-        location.href = '/supportguide#플로-스트리밍-가이드';
-			}else{}
-		});
+      }.then((result) => {
+        if (result.isConfirmed) {
+          location.href = '/supportguide#플로-스트리밍-가이드';
+        }
+      })
     }
     else{
       Swal.fire({
