@@ -170,7 +170,7 @@ function musicsite(site, theme) {
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
     if(site < 5 && theme )  location.href = music_site_url;
-    else if (site == 1){
+    else if (site == 1 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: '멜론 플레이리스트 생성 완료!',
@@ -179,7 +179,7 @@ function musicsite(site, theme) {
         footer: '<a href="/support#멜론-스트리밍-가이드"" style="color:#28acff">멜론 스트리밍 가이드 보러가기</a>'
       });
     }
-    else if (site == 2){
+    else if (site == 2 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: '지니 플레이리스트 생성 완료!',
@@ -188,7 +188,7 @@ function musicsite(site, theme) {
         footer: '<a href="/support#지니-스트리밍-가이드"" style="color:#28acff">지니 스트리밍 가이드 보러가기</a>'
       });
     }
-    else if (site == 3){
+    else if (site == 3 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: '벅스 플레이리스트 생성 완료!',
@@ -197,7 +197,7 @@ function musicsite(site, theme) {
         footer: '<a href="/support#벅스-스트리밍-가이드"" style="color:#28acff">벅스 스트리밍 가이드 보러가기</a>'
       });
     }
-    else if (site == 4){
+    else if (site == 4 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: '바이브 플레이리스트 생성 완료!',
