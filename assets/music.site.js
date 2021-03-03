@@ -258,7 +258,7 @@ function musicsite(site, theme) {
         }
       })
     }
-    else{
+    else if (site == 5){
       Swal.fire({
         icon: 'success',
         title: '생성 완료!🎉',
