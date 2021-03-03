@@ -173,12 +173,15 @@ function musicsite(site, theme) {
     if (site == 1 && theme == 51){
       Swal.fire({
         icon: 'success',
-        title: '멜론 플레이리스트 생성 완료!',
-        text: '데이식스를 서포트하러 가볼까요?🍋',
-        confirmButtonText: '좋아요!',
+        title: '플레이리스트 생성 완료!',
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        showDenyButton: true,
+        confirmButtonText: '가이드 보기',
+        denyButtonText: '바로 담기',
       }).then((result) => {
         if (result.isConfirmed) {
           location.href = '/supportguide#멜론-스트리밍-가이드';
+        } else if (result.isDenied) {
           location.href = music_site_url;
         }
       })
@@ -186,12 +189,15 @@ function musicsite(site, theme) {
     else if (site == 2 && theme == 51){
       Swal.fire({
         icon: 'success',
-        title: '지니 플레이리스트 생성 완료!',
-        text: '데이식스를 서포트하러 가볼까요?🍋',
-        confirmButtonText: '좋아요!',
+        title: '플레이리스트 생성 완료!',
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        showDenyButton: true,
+        confirmButtonText: '가이드 보기',
+        denyButtonText: '바로 담기',
       }).then((result) => {
         if (result.isConfirmed) {
           location.href = '/supportguide#지니-스트리밍-가이드';
+        } else if (result.isDenied) {
           location.href = music_site_url;
         }
       })
@@ -199,12 +205,15 @@ function musicsite(site, theme) {
     else if (site == 3 && theme == 51){
       Swal.fire({
         icon: 'success',
-        title: '벅스 플레이리스트 생성 완료!',
-        text: '데이식스를 서포트하러 가볼까요?🍋',
-        confirmButtonText: '좋아요!',
+        title: '플레이리스트 생성 완료!',
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        showDenyButton: true,
+        confirmButtonText: '가이드 보기',
+        denyButtonText: '바로 담기',
       }).then((result) => {
         if (result.isConfirmed) {
           location.href = '/supportguide#벅스-스트리밍-가이드';
+        } else if (result.isDenied) {
           location.href = music_site_url;
         }
       })
@@ -212,12 +221,15 @@ function musicsite(site, theme) {
     else if (site == 4 && theme == 51){
       Swal.fire({
         icon: 'success',
-        title: '바이브 플레이리스트 생성 완료!',
-        text: '데이식스를 서포트하러 가볼까요?🍋',
-        confirmButtonText: '좋아요!',
+        title: '플레이리스트 생성 완료!',
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        showDenyButton: true,
+        confirmButtonText: '가이드 보기',
+        denyButtonText: '바로 담기',
       }).then((result) => {
         if (result.isConfirmed) {
           location.href = '/supportguide#바이브-스트리밍-가이드';
+        } else if (result.isDenied) {
           location.href = music_site_url;
         }
       })
