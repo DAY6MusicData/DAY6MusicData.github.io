@@ -21,18 +21,6 @@ function musicsite(site, theme) {
   var guide_site = new Array();
   var msg = new Array();
 
-  guide_site[1] = "#멜론-스트리밍-가이드"
-  guide_site[2] = "#지니-스트리밍-가이드"
-  guide_site[3] = "#벅스-스트리밍-가이드"
-  guide_site[4] = "#바이브-스트리밍-가이드"
-  guide_site[5] = "#플로-스트리밍-가이드"
-
-  msg[1] = "멜론 플레이리스트 생성 완료!"
-  msg[2] = "지니 플레이리스트 생성 완료!"
-  msg[3] = "벅스 플레이리스트 생성 완료!"
-  msg[4] = "바이브 플레이리스트 생성 완료!"
-  msg[5] = "플로 플레이리스트 생성 완료!"
-
   // song-id
   var melon_songid = new Array();
   var genie_songid = new Array();
@@ -182,21 +170,63 @@ function musicsite(site, theme) {
     else if(site == 3) music_site_url = bugs + bugs_songid[theme];
     else if(site == 4) music_site_url = vibe + vibe_songid[theme];
     if(site < 5 && theme != 51 )  location.href = music_site_url;
-    else if (site < 5 && theme == 51 ){
+    else if (site == 1){
       Swal.fire({
         icon: 'success',
-        title: msg[site],
+        title: '멜론 플레이리스트 생성 완료!',
         text: '서포트 플레이리스트를 담을까요?🍋',
          confirmButtonText:
           '담을래요!',
-        footer: '<a href="#none" onclick="location.href = guide_site[site];" style="color:#28acff">스트리밍 가이드 보러가기</a>'
+        footer: '<a href="#멜론-스트리밍-가이드"" style="color:#28acff">멜론 스트리밍 가이드 보러가기</a>'
       }, function(isConfirm) {
         if (isConfirm) {
           location.href = music_site_url;
         }
       });
     }
-    else if (site < 5 && theme == 51){
+    else if (site == 2){
+      Swal.fire({
+        icon: 'success',
+        title: '지니 플레이리스트 생성 완료!',
+        text: '서포트 플레이리스트를 담을까요?🍋',
+         confirmButtonText:
+          '담을래요!',
+        footer: '<a href="#지니-스트리밍-가이드"" style="color:#28acff">지니 스트리밍 가이드 보러가기</a>'
+      }, function(isConfirm) {
+        if (isConfirm) {
+          location.href = music_site_url;
+        }
+      });
+    }
+    else if (site == 3){
+      Swal.fire({
+        icon: 'success',
+        title: '벅스 플레이리스트 생성 완료!',
+        text: '서포트 플레이리스트를 담을까요?🍋',
+         confirmButtonText:
+          '담을래요!',
+        footer: '<a href="#벅스-스트리밍-가이드"" style="color:#28acff">벅스 스트리밍 가이드 보러가기</a>'
+      }, function(isConfirm) {
+        if (isConfirm) {
+          location.href = music_site_url;
+        }
+      });
+    }
+    else if (site == 4){
+      Swal.fire({
+        icon: 'success',
+        title: '바이브 플레이리스트 생성 완료!',
+        text: '서포트 플레이리스트를 담을까요?🍋',
+         confirmButtonText:
+          '담을래요!',
+        footer: '<a href="#바이브-스트리밍-가이드"" style="color:#28acff">바이브 스트리밍 가이드 보러가기</a>'
+      }, function(isConfirm) {
+        if (isConfirm) {
+          location.href = music_site_url;
+        }
+      });
+    }
+    else if (site == 5 && theme == 51){
       Swal.fire({
         icon: 'success',
         title: msg[site],
@@ -205,7 +235,7 @@ function musicsite(site, theme) {
         imageHeight: 700,
         imageAlt: 'Playlist image',
         confirmButtonText: '알겠어요!',
-        footer: '<a href="#플로-스트리밍-가이드" style="color:#28acff">스트리밍 가이드 보러가기</a>'
+        footer: '<a href="#플로-스트리밍-가이드" style="color:#28acff">플로 스트리밍 가이드 보러가기</a>'
       })
     }
     else{
@@ -225,8 +255,36 @@ function musicsite(site, theme) {
     if(site == 1){
       if (userAgent.search("macintosh") > -1) music_site_url = melon_mac_1 + melon_songid[theme] + melon_mac_2;
       else music_site_url = melon_win + melon_songid[theme];
+      if(theme != 51) location.href = music_site_url;
     }
-    else if(site == 2) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
-    if(site == 1) location.href = music_site_url;
+    else if(site == 2 && theme != 51) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+    if(site == 1 && theme == 51){
+      Swal.fire({
+        icon: 'success',
+        title: '멜론 플레이리스트 생성 완료!',
+        text: '서포트 플레이리스트를 담을까요?🍋',
+         confirmButtonText:
+          '담을래요!',
+        footer: '<a href="#멜론-스트리밍-가이드"" style="color:#28acff">멜론 스트리밍 가이드 보러가기</a>'
+      }, function(isConfirm) {
+        if (isConfirm) {
+          location.href = music_site_url;
+        }
+      });
+    }
+    else if(site == 2 && theme == 51){
+      Swal.fire({
+        icon: 'success',
+        title: '지니 플레이리스트 생성 완료!',
+        text: '서포트 플레이리스트를 담을까요?🍋',
+         confirmButtonText:
+          '담을래요!',
+        footer: '<a href="#지니-스트리밍-가이드"" style="color:#28acff">지니 스트리밍 가이드 보러가기</a>'
+      }, function(isConfirm) {
+        if (isConfirm) {
+          window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+        }
+      });
+    }
   }
 }
