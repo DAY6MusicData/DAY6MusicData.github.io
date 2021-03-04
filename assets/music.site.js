@@ -139,6 +139,10 @@ function musicsite(site, theme) {
   var icon = ["error", "success"];
   var title = ["지원하지 않는 디바이스예요.😥", "플레이리스트 생성 완료!🎉"];
 
+  var guide_link = ["", "/supportguide#멜론-스트리밍-가이드", "/supportguide#지니-스트리밍-가이드", "/supportguide#벅스-스트리밍-가이드", "/supportguide#바이브-스트리밍-가이드", "/supportguide#플로-스트리밍-가이드"];
+  var button_color_confirm = ["#aaa", "#3085d6"];
+  var button_color_deny = ["#3085d6", "#aaa"];
+
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) || site < 3 ) ok = 1; // site test
   else ok = 0;
 
@@ -182,6 +186,27 @@ function musicsite(site, theme) {
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       });
     }
+    if (site < 5 && theme == 51){
+      Swal.fire({
+        icon: 'success',
+        title: '생성 완료!🎉',
+        text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        showDenyButton: true,
+        confirmButtonText: '바로 담기',
+        denyButtonText: '가이드 보기',
+        confirmButtonColor: button_color_confirm[guide_check],
+        denyButtonColor: button_color_deny[guide_check],
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.href = music_site_url;
+          guide_check = 0;
+        } else if (result.isDenied) {
+          location.href = guide_link[site];
+          guide_check = 1;
+        }
+      })
+    }
+    /*
     if (site == 1 && theme == 51){
       Swal.fire({
         icon: 'success',
@@ -254,15 +279,19 @@ function musicsite(site, theme) {
         }
       })
     }
+    */
     else if (site == 5 && theme == 51){
       Swal.fire({
         icon: 'success',
-        title: '플로 플레이리스트 생성 완료!',
-        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
+        title: '생성 완료!🎉',
+        text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
         imageUrl: flo_image[theme],
         imageHeight: 700,
         imageAlt: 'Playlist image',
-        confirmButtonText: '알겠어요!',
+        showDenyButton: true,
+        confirmButtonText: '가이드 보기',
+        denyButtonText: '괜찮아요',
+        denyButtonColor: '#aaa',
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       }).then((result) => {
         if (result.isConfirmed) {
@@ -316,3 +345,5 @@ function musicsite(site, theme) {
     }
   }
 }
+
+var guide_check = 0;
