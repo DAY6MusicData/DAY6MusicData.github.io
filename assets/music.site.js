@@ -139,7 +139,7 @@ function musicsite(site, theme) {
   var icon = ["error", "success"];
   var title = ["지원하지 않는 디바이스예요.😥", "플레이리스트 생성 완료!🎉"];
 
-  var guide_link = ["", "/supportguide#멜론-스트리밍-가이드", "/supportguide#지니-스트리밍-가이드", "/supportguide#벅스-스트리밍-가이드", "/supportguide#바이브-스트리밍-가이드", "/supportguide#플로-스트리밍-가이드"];
+  var guide_link = ["", "/support#멜론-스트리밍-가이드", "/support#지니-스트리밍-가이드", "/support#벅스-스트리밍-가이드", "/support#바이브-스트리밍-가이드", "/support#플로-스트리밍-가이드"];
   var button_color_confirm = ["#aaa", "#3085d6"];
   var button_color_deny = ["#3085d6", "#aaa"];
 
@@ -182,7 +182,7 @@ function musicsite(site, theme) {
         imageUrl: flo_image[theme],
         imageHeight: 700,
         imageAlt: 'Playlist image',
-        confirmButtonText: '알겠어요!',
+        confirmButtonText: '알겠어요',
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       });
     }
@@ -192,94 +192,20 @@ function musicsite(site, theme) {
         title: '생성 완료!🎉',
         text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
         showDenyButton: true,
+        focusConfirm: false,
+        focusDeny: true,
         confirmButtonText: '바로 담기',
         denyButtonText: '가이드 보기',
-        confirmButtonColor: button_color_confirm[guide_check],
-        denyButtonColor: button_color_deny[guide_check],
+        confirmButtonColor: '#aab7c1',
+        denyButtonColor: '#3085d6',
       }).then((result) => {
         if (result.isConfirmed) {
           location.href = music_site_url;
-          guide_check = 0;
         } else if (result.isDenied) {
           location.href = guide_link[site];
-          guide_check = 1;
         }
       })
     }
-    /*
-    if (site == 1 && theme == 51){
-      Swal.fire({
-        icon: 'success',
-        title: '멜론 플레이리스트 생성 완료!',
-        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
-        showDenyButton: true,
-        confirmButtonText: '바로 담기',
-        denyButtonText: '가이드 보기',
-        confirmButtonColor: '#aaa',
-        denyButtonColor: '#3085d6',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.href = music_site_url;
-        } else if (result.isDenied) {
-          location.href = '/supportguide#멜론-스트리밍-가이드';
-        }
-      })
-    }
-    else if (site == 2 && theme == 51){
-      Swal.fire({
-        icon: 'success',
-        title: '지니 플레이리스트 생성 완료!',
-        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
-        showDenyButton: true,
-        confirmButtonText: '바로 담기',
-        denyButtonText: '가이드 보기',
-        confirmButtonColor: '#aaa',
-        denyButtonColor: '#3085d6',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.href = music_site_url;
-        } else if (result.isDenied) {
-          location.href = '/supportguide#지니-스트리밍-가이드';
-        }
-      })
-    }
-    else if (site == 3 && theme == 51){
-      Swal.fire({
-        icon: 'success',
-        title: '벅스 플레이리스트 생성 완료!',
-        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
-        showDenyButton: true,
-        confirmButtonText: '바로 담기',
-        denyButtonText: '가이드 보기',
-        confirmButtonColor: '#aaa',
-        denyButtonColor: '#3085d6',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.href = music_site_url;
-        } else if (result.isDenied) {
-          location.href = '/supportguide#벅스-스트리밍-가이드';
-        }
-      })
-    }
-    else if (site == 4 && theme == 51){
-      Swal.fire({
-        icon: 'success',
-        title: '플레이리스트 생성 완료!',
-        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
-        showDenyButton: true,
-        confirmButtonText: '바로 담기',
-        denyButtonText: '가이드 보기',
-        confirmButtonColor: '#aaa',
-        denyButtonColor: '#3085d6',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.href = music_site_url;
-        } else if (result.isDenied) {
-          location.href = '/supportguide#바이브-스트리밍-가이드';
-        }
-      })
-    }
-    */
     else if (site == 5 && theme == 51){
       Swal.fire({
         icon: 'success',
@@ -289,13 +215,17 @@ function musicsite(site, theme) {
         imageHeight: 700,
         imageAlt: 'Playlist image',
         showDenyButton: true,
-        confirmButtonText: '가이드 보기',
-        denyButtonText: '괜찮아요',
-        denyButtonColor: '#aaa',
+        focusConfirm: false,
+        focusDeny: true,
+        confirmButtonText: '괜찮아요',
+        denyButtonText: '가이드 보기',
+        confirmButtonColor: '#aab7c1',
+        denyButtonColor: '#3085d6',
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       }).then((result) => {
         if (result.isConfirmed) {
-          location.href = '/supportguide#플로-스트리밍-가이드';
+        } else if (result.isDenied) {
+          location.href = guide_link[site];
         }
       })
     }
@@ -345,5 +275,3 @@ function musicsite(site, theme) {
     }
   }
 }
-
-var guide_check = 0;
