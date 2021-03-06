@@ -251,7 +251,7 @@ function musicsite(site, theme) {
         if (result.isConfirmed) {
           location.href = music_site_url;
         } else if (result.isDenied) {
-          location.href = '/supportguide#멜론-스트리밍-가이드';
+          location.href = '/support#멜론-스트리밍-가이드';
         }
       })
     }
@@ -269,7 +269,7 @@ function musicsite(site, theme) {
         if (result.isConfirmed) {
           window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
         } else if (result.isDenied) {
-          location.href = '/supportguide#지니-스트리밍-가이드';
+          location.href = '/support#지니-스트리밍-가이드';
         }
       })
     }
