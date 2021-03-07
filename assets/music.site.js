@@ -234,9 +234,9 @@ function musicsite(site, theme) {
     if(site == 1 || site == 6){
       if (userAgent.search("macintosh") > -1) music_site_url = melon_mac_1 + melon_songid[theme] + melon_mac_2;
       else music_site_url = melon_win + melon_songid[theme];
-      if (theme != 51) location.href = music_site_url;
+      if (site != 6) location.href = music_site_url;
     }
-    else if(site == 2 || site == 7) if (theme != 51) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+    else if(site == 2 || site == 7) if (site != 6) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
     if(site == 6){
       Swal.fire({
         icon: 'success',
