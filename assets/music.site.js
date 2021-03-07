@@ -163,16 +163,16 @@ function musicsite(site, theme) {
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
     // site 1 - 4 case
-    if(site == 1 && site == 6){
+    if(site == 1 || site == 6){
       if (userAgent.search("ipad") > -1 || navigator.platform === 'MacIntel') music_site_url = melon_ipad + melon_songid[theme];
       else music_site_url = melon + melon_songid[theme];
     }
-    else if(site == 2 && site == 7){
+    else if(site == 2 || site == 7){
       if(userAgent.search("android") > -1) music_site_url = genie_android + genie_songid[theme];
       else music_site_url = genie_iphone + genie_songid[theme];
     }
-    else if(site == 3 && site == 8) music_site_url = bugs + bugs_songid[theme];
-    else if(site == 4 && site == 9) music_site_url = vibe + vibe_songid[theme];
+    else if(site == 3 || site == 8) music_site_url = bugs + bugs_songid[theme];
+    else if(site == 4 || site == 9) music_site_url = vibe + vibe_songid[theme];
     if(site < 5)  location.href = music_site_url;
     else if (site == 5){
       Swal.fire({
@@ -231,12 +231,12 @@ function musicsite(site, theme) {
     }
   }
   else{
-    if(site == 1){
+    if(site == 1 || site == 6){
       if (userAgent.search("macintosh") > -1) music_site_url = melon_mac_1 + melon_songid[theme] + melon_mac_2;
       else music_site_url = melon_win + melon_songid[theme];
       if (theme != 51) location.href = music_site_url;
     }
-    else if(site == 2) if (theme != 51) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+    else if(site == 2 || site == 7) if (theme != 51) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
     if(site == 6){
       Swal.fire({
         icon: 'success',
