@@ -251,7 +251,7 @@ function musicsite(site, theme) {
         if (result.isConfirmed) {
           location.href = music_site_url;
         } else if (result.isDenied) {
-          location.href = guide_link[site];
+          location.href = guide_link[site-5];
         }
       })
     }
@@ -269,7 +269,7 @@ function musicsite(site, theme) {
         if (result.isConfirmed) {
           window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
         } else if (result.isDenied) {
-          location.href = guide_link[site];
+          location.href = guide_link[site-5];
         }
       })
     }
