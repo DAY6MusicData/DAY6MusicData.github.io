@@ -237,7 +237,7 @@ function musicsite(site, theme) {
       if (theme != 51) location.href = music_site_url;
     }
     else if(site == 2) if (theme != 51) window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
-    if(site == 1 && theme == 51){
+    if(site == 6){
       Swal.fire({
         icon: 'success',
         title: '멜론 플레이리스트 생성 완료!',
@@ -255,7 +255,7 @@ function musicsite(site, theme) {
         }
       })
     }
-    else if(site == 2 && theme == 51){
+    else if(site == 7){
       Swal.fire({
         icon: 'success',
         title: '지니 플레이리스트 생성 완료!',
