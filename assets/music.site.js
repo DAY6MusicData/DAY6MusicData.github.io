@@ -139,7 +139,7 @@ function musicsite(site, theme) {
   var icon = ["error", "success"];
   var title = ["지원하지 않는 디바이스예요.😥", "플레이리스트 생성 완료!🎉"];
 
-  var guide_link = ["", "/support#멜론-스트리밍-가이드", "/support#지니-스트리밍-가이드", "/support#벅스-스트리밍-가이드", "/support#바이브-스트리밍-가이드", "/support#플로-스트리밍-가이드"];
+  var guide_link = ["", "/guide#멜론-스트리밍-가이드", "/guide#지니-스트리밍-가이드", "/guide#벅스-스트리밍-가이드", "/guide#바이브-스트리밍-가이드", "/guide#플로-스트리밍-가이드"];
   var button_color_confirm = ["#aaa", "#3085d6"];
   var button_color_deny = ["#3085d6", "#aaa"];
 
@@ -163,18 +163,18 @@ function musicsite(site, theme) {
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
     // site 1 - 4 case
-    if(site == 1){
+    if(site == 1 && site == 6){
       if (userAgent.search("ipad") > -1 || navigator.platform === 'MacIntel') music_site_url = melon_ipad + melon_songid[theme];
       else music_site_url = melon + melon_songid[theme];
     }
-    else if(site == 2){
+    else if(site == 2 && site == 7){
       if(userAgent.search("android") > -1) music_site_url = genie_android + genie_songid[theme];
       else music_site_url = genie_iphone + genie_songid[theme];
     }
-    else if(site == 3) music_site_url = bugs + bugs_songid[theme];
-    else if(site == 4) music_site_url = vibe + vibe_songid[theme];
-    if(site < 5 && theme != 51)  location.href = music_site_url;
-    else if (site == 5 && theme != 51){
+    else if(site == 3 && site == 8) music_site_url = bugs + bugs_songid[theme];
+    else if(site == 4 && site == 9) music_site_url = vibe + vibe_songid[theme];
+    if(site < 5)  location.href = music_site_url;
+    else if (site == 5){
       Swal.fire({
         icon: 'success',
         title: '생성 완료!🎉',
@@ -186,7 +186,7 @@ function musicsite(site, theme) {
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       });
     }
-    if (site < 5 && theme == 51){
+    if (site > 5 && site < 10){
       Swal.fire({
         icon: 'success',
         title: '생성 완료!🎉',
@@ -202,11 +202,11 @@ function musicsite(site, theme) {
         if (result.isConfirmed) {
           location.href = music_site_url;
         } else if (result.isDenied) {
-          location.href = guide_link[site];
+          location.href = guide_link[site-5];
         }
       })
     }
-    else if (site == 5 && theme == 51){
+    else if (site == 10){
       Swal.fire({
         icon: 'success',
         title: '생성 완료!🎉',
@@ -225,7 +225,7 @@ function musicsite(site, theme) {
       }).then((result) => {
         if (result.isConfirmed) {
         } else if (result.isDenied) {
-          location.href = guide_link[site];
+          location.href = guide_link[site-5];
         }
       })
     }
@@ -251,7 +251,7 @@ function musicsite(site, theme) {
         if (result.isConfirmed) {
           location.href = music_site_url;
         } else if (result.isDenied) {
-          location.href = '/support#멜론-스트리밍-가이드';
+          location.href = guide_link[site];
         }
       })
     }
@@ -269,7 +269,7 @@ function musicsite(site, theme) {
         if (result.isConfirmed) {
           window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
         } else if (result.isDenied) {
-          location.href = '/support#지니-스트리밍-가이드';
+          location.href = guide_link[site];
         }
       })
     }
