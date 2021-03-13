@@ -250,7 +250,7 @@ function musicsite(site, theme) {
         denyButtonColor: '#3085d6',
       }).then((result) => {
         if (result.isConfirmed) {
-          window.open( genie_web + genie_songid[theme], '', 'scrollbars=no, width=600, height=600');
+          location.href = music_site_url;
         } else if (result.isDenied) {
           location.href = guide_link[site-5];
         }
