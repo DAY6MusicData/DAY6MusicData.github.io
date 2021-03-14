@@ -93,6 +93,15 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
+  if ( ok == 1 && site == 5 ) {
+    mergeImg(['/playlist/parts/1.png', '/playlist/parts/2.png'])
+      .then((img) => {
+        // save image as file
+        img.write('/output.png', () => console.log('perfect'));
+      });
+    location.href = '/output.png';
+  }
+
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
     // site 1 - 4 case
     if(site == 1 || site == 6){
