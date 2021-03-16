@@ -1,3 +1,5 @@
+import mergeImg from 'merge-img';
+
 function musicsite(site, theme) {
   // device test
   var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
@@ -94,8 +96,10 @@ function musicsite(site, theme) {
   })
 
   if ( ok == 1 && site == 5 ) {
-    mergeImg(['/playlist/parts/1.png', '/playlist/parts/2.png'])
-      .then((img) => {
+    mergeImg(
+             ['/playlist/parts/1.png', '/playlist/parts/2.png'],
+             direction: true
+    ).then((img) => {
         // save image as file
         img.write('/output.png', () => console.log('perfect'));
       });
