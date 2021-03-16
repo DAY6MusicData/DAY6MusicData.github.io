@@ -93,6 +93,8 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
+  const mergeImg = require('merge-img');
+
   if ( site == 5 ) {
     mergeImg(['/playlist/parts/1.png', '/playlist/parts/2.png'])
       .then((img) => {
