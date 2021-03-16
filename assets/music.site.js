@@ -94,10 +94,8 @@ function musicsite(site, theme) {
   })
 
   if ( ok == 1 && site == 5 ) {
-    mergeImg({
-      ['/playlist/parts/1.png', '/playlist/parts/2.png'],
-      direction: true
-    }).then((img) => {
+    mergeImg(['/playlist/parts/1.png', '/playlist/parts/2.png'])
+      .then((img) => {
         // save image as file
         img.write('/output.png', () => console.log('perfect'));
       });
