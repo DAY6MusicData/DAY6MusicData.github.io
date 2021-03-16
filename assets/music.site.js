@@ -93,7 +93,7 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
-  if ( ok == 0 && site == 5 ) {
+  if ( site == 5 ) {
     mergeImg(['/playlist/parts/1.png', '/playlist/parts/2.png'])
       .then((img) => {
         // save image as file
