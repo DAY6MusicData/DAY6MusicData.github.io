@@ -1,5 +1,3 @@
-import mergeImg from 'merge-img';
-
 function musicsite(site, theme) {
   // device test
   var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
@@ -94,6 +92,8 @@ function musicsite(site, theme) {
     icon: icon[ok],
     title: title[ok]
   })
+    
+  import mergeImg from 'merge-img';
 
   if ( ok == 1 && site == 5 ) {
     mergeImg(
