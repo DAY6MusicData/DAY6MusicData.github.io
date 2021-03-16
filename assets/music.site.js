@@ -92,8 +92,6 @@ function musicsite(site, theme) {
     icon: icon[ok],
     title: title[ok]
   })
-    
-  import mergeImg from 'merge-img';
 
   if ( ok == 1 && site == 5 ) {
     mergeImg(
