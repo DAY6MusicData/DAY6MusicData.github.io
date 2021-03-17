@@ -1,3 +1,7 @@
+import {resolve} from 'path';
+import Jimp, {read} from 'jimp';
+import mergeImg from '../src';
+
 function musicsite(site, theme) {
   // device test
   var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
@@ -92,8 +96,6 @@ function musicsite(site, theme) {
     icon: icon[ok],
     title: title[ok]
   })
-
-  const mergeImg = require('merge-img');
 
   if ( site == 5 ) {
     mergeImg(['/playlist/parts/1.png', '/playlist/parts/2.png'])
