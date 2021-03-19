@@ -1,5 +1,3 @@
-import mergeImg from '../src';
-
 function musicsite(site, theme) {
   // device test
   var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
