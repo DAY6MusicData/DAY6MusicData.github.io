@@ -1,5 +1,3 @@
-import {resolve} from 'path';
-import Jimp, {read} from 'jimp';
 import mergeImg from '../src';
 
 function musicsite(site, theme) {
