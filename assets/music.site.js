@@ -25,7 +25,8 @@ function musicsite(site, theme) {
   var genie_songid = [84964151,84964152,84964153,84964154,84964155,84964156,86089284,86089285,86112660,86112661,86112662,86112663,86866728,86866729,86931930,86931931,86990352,86990353,87064418,87064419,87121533,87121534,87185618,87185619,87185623,87185631,87264764,87264765,87359516,87359517,87415867,87415868,87463141,87463142,87527108,87527109,87591822,87591823,87591834,88072513,88072514,88072515,88072516,88072517,88072518,88233287,88362467,88389337,88455412,88455413,88455414,88455415,88455416,88455417,89220626,89220627,89220628,89220629,89220630,89220631,89472159,89472160,89472161,89472162,89472163,89472164,89472165,89472166,89472167,89472168,89472169,90194895,90194896,90194897,90194898,90194899,90194900,90194901,90194902,90756152,90756153,90756154,90756155,90756156,90756157,90756158,91565584,91978161];
   var bugs_songid = [4551004,4551005,4551006,4551007,4551008,4551009,30203510,30203511,30203512,30203513,30203514,30203515,30511020,30511021,30540153,30540154,30573080,30573081,30612023,30612024,30646154,30646155,30677527,30677528,30677532,30677540,30708337,30708338,30742600,30742601,30772387,30772388,30800908,30800909,30833861,30833862,30872542,30872543,30872554,31120686,31120687,31120688,31120689,31120690,31120691,31225862,31304162,31318643,31360121,31360122,31360123,31360124,31360125,31360126,31650948,31650949,31650950,31650951,31650952,31650953,31728992,31728993,31728994,31728995,31728996,31728997,31728998,31728999,31729000,31729001,31729002,31908732,31908733,31908734,31908735,31908736,31908737,31908738,31908739,32006764,32006765,32006766,32006767,32006768,32006769,32006770,6029882,32124930];
   var vibe_songid = [5701352,5701356,5701361,5701347,5701349,5701354,6049320,6049321,6049322,6049323,6049324,6049325,16035922,16035923,16081363,16081364,16473414,16473415,17409146,17409156,17735999,17736000,17836612,17836615,17836617,17836625,18419728,18419729,18676775,18676777,18939330,18939331,19183554,19183552,19738258,19738184,20121086,20121084,20121097,21408918,21408915,21408920,21408916,21408919,21408917,21712039,22531444,22886295,23177550,23177552,23177555,23177558,23177561,23177562,27852477,27852478,27852479,27852481,27852480,27852482,30184802,30165478,30184807,30184803,30184808,30184804,30184805,30184806,30184809,30184810,30184811,40319205,40319204,40319206,40319207,40319208,40319209,40319210,40319211,41909362,41909363,41909364,41909365,41909367,41909366,41909368,43626549,44037981];
-
+  var playlist_parts = ["/playlist/parts/0.png","/playlist/parts/1.png","/playlist/parts/2.png","/playlist/parts/3.png","/playlist/parts/4.png","/playlist/parts/5.png","/playlist/parts/6.png","/playlist/parts/7.png","/playlist/parts/8.png","/playlist/parts/9.png","/playlist/parts/10.png","/playlist/parts/11.png","/playlist/parts/12.png","/playlist/parts/13.png","/playlist/parts/14.png","/playlist/parts/15.png","/playlist/parts/16.png","/playlist/parts/17.png","/playlist/parts/18.png","/playlist/parts/19.png","/playlist/parts/20.png","/playlist/parts/21.png","/playlist/parts/22.png","/playlist/parts/23.png","/playlist/parts/24.png","/playlist/parts/25.png","/playlist/parts/26.png","/playlist/parts/27.png","/playlist/parts/28.png","/playlist/parts/29.png","/playlist/parts/30.png","/playlist/parts/31.png","/playlist/parts/32.png","/playlist/parts/33.png","/playlist/parts/34.png","/playlist/parts/35.png","/playlist/parts/36.png","/playlist/parts/37.png","/playlist/parts/38.png","/playlist/parts/39.png","/playlist/parts/40.png","/playlist/parts/41.png","/playlist/parts/42.png","/playlist/parts/43.png","/playlist/parts/44.png","/playlist/parts/45.png","/playlist/parts/46.png","/playlist/parts/47.png","/playlist/parts/48.png","/playlist/parts/49.png","/playlist/parts/50.png","/playlist/parts/51.png","/playlist/parts/52.png","/playlist/parts/53.png","/playlist/parts/54.png","/playlist/parts/55.png","/playlist/parts/56.png","/playlist/parts/57.png","/playlist/parts/58.png","/playlist/parts/59.png","/playlist/parts/60.png","/playlist/parts/61.png","/playlist/parts/62.png","/playlist/parts/63.png","/playlist/parts/64.png","/playlist/parts/65.png","/playlist/parts/66.png","/playlist/parts/67.png","/playlist/parts/68.png","/playlist/parts/69.png","/playlist/parts/70.png","/playlist/parts/71.png","/playlist/parts/72.png","/playlist/parts/73.png","/playlist/parts/74.png","/playlist/parts/75.png","/playlist/parts/76.png","/playlist/parts/77.png","/playlist/parts/78.png","/playlist/parts/79.png","/playlist/parts/80.png","/playlist/parts/81.png","/playlist/parts/82.png","/playlist/parts/83.png","/playlist/parts/84.png","/playlist/parts/85.png","/playlist/parts/86.png","/playlist/parts/87.png","/playlist/parts/88.png","/playlist/parts/89.png","/playlist/parts/90.png","/playlist/parts/91.png","/playlist/parts/92.png","/playlist/parts/93.png","/playlist/parts/94.png"];
+  
   // playlist array
   var playlist_number = Array.from(Array(100),() => Array()); // playlist 개수 한도 100 설정
   playlist_number[0] = [55,45,0,59,37,87,36,71,9,21,82,32,67,61,74,40,77,8,70,30,17,44,13,23,14,2,41,33,72,10,49];
@@ -65,13 +66,12 @@ function musicsite(site, theme) {
   playlist_img[14] = "/playlist/winter.gif";
   playlist_img[51] = "/playlist/pick.gif";
 
-
   // melon : 1 // genie : 2 // bugs : 3 // vibe : 4 // flo : 5
   // site = a / theme = b
 
   var ok = 0;
   var icon = ["error", "success"];
-  var title = ["지원하지 않는 디바이스예요.😥", "플레이리스트 생성 완료!🎉"];
+  var title = ["지원하지 않는 기기예요😥", "플레이리스트 생성 완료🎉"];
 
   var guide_link = ["", "/guide#멜론-스트리밍-가이드", "/guide#지니-스트리밍-가이드", "/guide#벅스-스트리밍-가이드", "/guide#바이브-스트리밍-가이드", "/guide#플로-스트리밍-가이드"];
 
@@ -93,13 +93,31 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
-  if ( site == 5 ) {
-    mergeImg(['/playlist/parts/1.png', '/playlist/parts/2.png'])
-      .then((img) => {
-        // save image as file
-        img.write('/output.png', () => console.log('perfect'));
-      });
-    location.href = '/output.png';
+  if ( site == 5 && mobile) {
+    var canvas = document.querySelector("#playlist"),
+    ctx = canvas.getContext('2d');
+
+    canvas.height = 500;
+    canvas.width = 100*playlist_number[theme].length;
+
+    var imgs = new Array();
+    for(i=0;i<playlist_number[theme].length;i++){
+      imgs[i]= new Image();
+      imgs[i].src = image_files[i];
+    }
+
+    for(i=0;i<5;i++){
+      ctx.drawImage(imgs[i], 0, 100*i);
+    }
+}
+
+for(i=0;i<5;i++){
+ctx.drawImage(imgs[i], 0, 100*i);
+}
+
+document.querySelector('a').addEventListener('click', event =>
+event.target.href = canvas.toDataURL()
+);
   }
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
@@ -132,7 +150,7 @@ function musicsite(site, theme) {
         icon: 'success',
         title: '생성 완료!🎉',
         text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
-        imageUrl: playlist_img[theme],
+        imageUrl: canvas.toDataURL(),
         imageHeight: 700,
         imageAlt: 'Playlist image',
         confirmButtonText: '알겠어요',
