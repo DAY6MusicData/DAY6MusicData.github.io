@@ -103,9 +103,9 @@ function musicsite(site, theme) {
     var imgs = new Array();
     for(i=0;i<playlist_number[theme].length;i++){
       imgs[i]= new Image();
-      imgs[i].src = image_files[i];
+      imgs[i].src = playlist_parts[playlist_number[theme][i]];
     }
-    
+
     for(i=0;i<5;i++){
       ctx.drawImage(imgs[i], 0, 100*i);
     }
