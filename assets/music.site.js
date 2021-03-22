@@ -105,19 +105,10 @@ function musicsite(site, theme) {
       imgs[i]= new Image();
       imgs[i].src = image_files[i];
     }
-
+    
     for(i=0;i<5;i++){
       ctx.drawImage(imgs[i], 0, 100*i);
     }
-}
-
-for(i=0;i<5;i++){
-ctx.drawImage(imgs[i], 0, 100*i);
-}
-
-document.querySelector('a').addEventListener('click', event =>
-event.target.href = canvas.toDataURL()
-);
   }
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
