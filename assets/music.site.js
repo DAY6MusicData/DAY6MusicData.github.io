@@ -97,8 +97,8 @@ function musicsite(site, theme) {
     var canvas = document.querySelector("#playlist"),
     ctx = canvas.getContext('2d');
 
-    canvas.height = 500;
-    canvas.width = 100*playlist_number[theme].length;
+    canvas.width = 500;
+    canvas.height = 100*playlist_number[theme].length;
 
     var imgs = new Array();
     for(i=0;i<playlist_number[theme].length;i++){
