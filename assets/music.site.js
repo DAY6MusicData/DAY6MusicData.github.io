@@ -41,7 +41,7 @@ function musicsite(site, theme) {
   playlist_number[6] = [20,36,59,35,19,55,28,18,56,87,9,71,49,40,74,41,61];
   playlist_number[7] = [14,30,70,13,73,8,67,17,32,45,26,53,72,82,48,38];
   playlist_number[8] = [2,8,12,14,16,18,20,23,26,28,30,32,34,37,40,45,49,55,61,72,82,87];
-  playlist_number[9] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49];
+  playlist_number[9] = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87];
   playlist_number[10] = [12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38];
   playlist_number[11] = [87,18,28,56,15,45,21,46,84,26,86,80,71,29,6,54,19];
   playlist_number[12] = [55,0,35,4,60,41,9,7,64,1,10,22,57,80,42,19,20];
@@ -86,8 +86,9 @@ function musicsite(site, theme) {
 
     var imgs = new Array();
     for(i=0;i<playlist_number[theme].length;i++){
-      imgs[i] = new Image();
-      imgs[i].src = playlist_parts[playlist_number[theme][i]];
+      ctx.drawImage(imgs[i], 0, 70*i);
+    }
+    for(i=0;i<playlist_number[theme].length;i++){
       ctx.drawImage(imgs[i], 0, 70*i);
     }
   }
@@ -121,7 +122,7 @@ function musicsite(site, theme) {
       Swal.fire({
         title: '만드는 중...⏳',
         html: '플레이리스트를 만들고 있어요',
-        timer: 10000,
+        timer: 1000,
         timerProgressBar: false,
         didOpen: () => {
           Swal.showLoading()
