@@ -89,13 +89,8 @@ function musicsite(site, theme) {
     for(i=0;i<playlist_number[theme].length;i++){
       imgs[i] = new Image();
       imgs[i].src = playlist_parts[playlist_number[theme][i]];
-    }
-    for(i=0;i<playlist_number[theme].length;i++){
-      img_check = 1;
-      while(img_check){
-        imgs[i].onload = function() {
-          img_check = 0;
-        }
+      imgs[i].onload = function() {
+        ctx.drawImage(imgs[i], 0, 70*i);
       }
     }
     for(i=0;i<playlist_number[theme].length;i++){
