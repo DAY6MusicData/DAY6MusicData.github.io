@@ -20,6 +20,9 @@ function musicsite(site, theme) {
   var songid_dump = "";
   var i;
 
+  // swal timer
+  let timerInterval
+
   // song-id
   var melon_songid = [7844372,7844373,7844374,7844375,7844376,7844377,8120282,8120283,8120284,8120285,8120286,8120287,30189029,30189030,30232719,30233080,30284609,30285386,30345502,30345503,30399493,30399494,30457471,30457472,30457476,30457484,30507915,30508688,30566474,30566475,30617942,30617943,30658626,30658627,30711862,30711863,30771999,30772000,30772011,31149436,31149437,31149438,31149439,31149440,31149441,31295149,31412373,31431163,31481699,31481700,31481701,31481702,31481703,31481704,31927274,31927275,31927276,31927277,31927278,31927279,32115575,32115576,32115577,32115578,32115579,32115580,32115581,32115582,32115583,32115584,32115585,32586847,32586848,32586849,32586850,32586851,32586852,32586853,32586854,32892355,32892356,32892357,32892358,32892359,32892360,32892361,33116872,33210835];
   var genie_songid = [84964151,84964152,84964153,84964154,84964155,84964156,86089284,86089285,86112660,86112661,86112662,86112663,86866728,86866729,86931930,86931931,86990352,86990353,87064418,87064419,87121533,87121534,87185618,87185619,87185623,87185631,87264764,87264765,87359516,87359517,87415867,87415868,87463141,87463142,87527108,87527109,87591822,87591823,87591834,88072513,88072514,88072515,88072516,88072517,88072518,88233287,88362467,88389337,88455412,88455413,88455414,88455415,88455416,88455417,89220626,89220627,89220628,89220629,89220630,89220631,89472159,89472160,89472161,89472162,89472163,89472164,89472165,89472166,89472167,89472168,89472169,90194895,90194896,90194897,90194898,90194899,90194900,90194901,90194902,90756152,90756153,90756154,90756155,90756156,90756157,90756158,91565584,91978161];
@@ -46,25 +49,6 @@ function musicsite(site, theme) {
   playlist_number[14] = [13,73,70,14,47,37,59,36,49,23,21,54,58,8,84,86,82,53,38];
   playlist_number[51] = [55,45,0,59,37,87,36,71,9,21,82,32,67,61,74,40,77,8,70,30,17,44,13,23,14,2,41,33,72,10,49]; // melon vibe
   playlist_number[52] = [55,36,35,37,45,26,21,87,56,19,15,18]; // genie bugs
-
-  // playlist img
-  var playlist_img = new Array();
-  playlist_img[0] = "/playlist/pick.gif";
-  playlist_img[1] = "/playlist/arcane-salon.gif";
-  playlist_img[2] = "/playlist/the-present-2019.gif";
-  playlist_img[3] = "/playlist/gravity.gif";
-  playlist_img[4] = "/playlist/love.gif";
-  playlist_img[5] = "/playlist/sad.gif";
-  playlist_img[6] = "/playlist/exciting.gif";
-  playlist_img[7] = "/playlist/calm.gif";
-  playlist_img[8] = "/playlist/title.gif";
-  playlist_img[9] = "/playlist/all.gif";
-  playlist_img[10] = "/playlist/every-day6.gif";
-  playlist_img[11] = "/playlist/spring.gif";
-  playlist_img[12] = "/playlist/summer.gif";
-  playlist_img[13] = "/playlist/fall.gif";
-  playlist_img[14] = "/playlist/winter.gif";
-  playlist_img[51] = "/playlist/pick.gif";
 
   // melon : 1 // genie : 2 // bugs : 3 // vibe : 4 // flo : 5
   // site = a / theme = b
@@ -93,12 +77,12 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
-  if ( site == 5 && mobile) {
+  if ( (site==5||site==10) && mobile ){
     var canvas = document.querySelector("#playlist"),
     ctx = canvas.getContext('2d');
 
-    canvas.width = 500;
-    canvas.height = 100*playlist_number[theme].length;
+    canvas.width = 350;
+    canvas.height = 70*playlist_number[theme].length;
 
     var imgs = new Array();
     for(i=0;i<playlist_number[theme].length;i++){
@@ -135,15 +119,45 @@ function musicsite(site, theme) {
     if(site < 5)  location.href = music_site_url;
     else if (site == 5){
       Swal.fire({
-        icon: 'success',
-        title: '생성 완료!🎉',
-        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
-        imageUrl: canvas.toDataURL(),
-        imageHeight: 700,
-        imageAlt: 'Playlist image',
-        confirmButtonText: '알겠어요',
-        footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
-      });
+        title: '만드는 중...⏳',
+        html: '플레이리스트를 만들고 있어요',
+        timer: 5000,
+        timerProgressBar: false,
+        didOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+          Swal.fire({
+            icon: 'success',
+            title: '생성 완료!🎉',
+            text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
+            imageUrl: canvas.toDataURL(),
+            imageHeight: 700,
+            imageAlt: 'Playlist image',
+            confirmButtonText: '알겠어요',
+            footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
+          }).then((result) => {
+              canvas.width = 0;
+              canvas.height = 0;
+          })
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          canvas.width = 0;
+          canvas.height = 0;
+        }
+      })
     }
     if (site > 5 && site < 10){
       Swal.fire({
@@ -170,7 +184,7 @@ function musicsite(site, theme) {
         icon: 'success',
         title: '생성 완료!🎉',
         text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
-        imageUrl: playlist_img[theme],
+        imageUrl: canvas.toDataURL(),
         imageHeight: 700,
         imageAlt: 'Playlist image',
         showDenyButton: true,
@@ -183,9 +197,11 @@ function musicsite(site, theme) {
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
       }).then((result) => {
         if (result.isConfirmed) {
-        } else if (result.isDenied) {
+        } else {
           location.href = guide_link[site-5];
         }
+        anvas.width = 0;
+        canvas.height = 0;
       })
     }
   }
