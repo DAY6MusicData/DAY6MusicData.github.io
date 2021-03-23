@@ -63,6 +63,20 @@ function musicsite(site, theme) {
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) || site < 3 || ( site == 3 && userAgent.search("macintosh") > -1 ) ) ok = 1; // site test
   else ok = 0;
 
+  if ( (site==5||site==10) && mobile ){
+    var canvas = document.querySelector("#playlist"),
+    ctx = canvas.getContext('2d');
+
+    canvas.width = 350;
+    canvas.height = 70*playlist_number[theme].length;
+
+    var imgs = new Array();
+    for(i=0;i<playlist_number[theme].length;i++){
+      imgs[i] = new Image();
+      imgs[i].src = playlist_parts[playlist_number[theme][i]];
+    }
+  }
+
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
@@ -77,26 +91,6 @@ function musicsite(site, theme) {
     icon: icon[ok],
     title: title[ok]
   })
-
-  if ( (site==5||site==10) && mobile ){
-    var canvas = document.querySelector("#playlist"),
-    ctx = canvas.getContext('2d');
-
-    canvas.width = 350;
-    canvas.height = 70*playlist_number[theme].length;
-
-    var imgs = new Array();
-    for(i=0;i<playlist_number[theme].length;i++){
-      imgs[i] = new Image();
-      imgs[i].src = playlist_parts[playlist_number[theme][i]];
-      imgs[i].onload = function() {
-        ctx.drawImage(imgs[i], 0, 70*i);
-      }
-    }
-    for(i=0;i<playlist_number[theme].length;i++){
-      ctx.drawImage(imgs[i], 0, 70*i);
-    }
-  }
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
     // site 1 - 4 case
@@ -124,6 +118,49 @@ function musicsite(site, theme) {
     }
     if(site < 5)  location.href = music_site_url;
     else if (site == 5){
+      Swal.fire({
+        title: '만드는 중...',
+        html: '플레이리스트를 만들고 있어요.',
+        timer: 2000,
+        timerProgressBar: false,
+        didOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent()
+            if (content) {
+              const b = content.querySelector('b')
+              if (b) {
+                b.textContent = Swal.getTimerLeft()
+              }
+            }
+          }, 100)
+        },
+        willClose: () => {
+          for(i=0;i<playlist_number[theme].length;i++){
+            ctx.drawImage(imgs[i], 0, 70*i);
+          }
+          clearInterval(timerInterval)
+          Swal.fire({
+            icon: 'success',
+            title: '생성 완료🎉',
+            text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
+            imageUrl: canvas.toDataURL(),
+            imageHeight: 35*playlist_number[theme].length,
+            imageAlt: 'Playlist image',
+            confirmButtonText: '알겠어요',
+            footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
+          }).then((result) => {
+              canvas.width = 0;
+              canvas.height = 0;
+          })
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
+
       Swal.fire({
         icon: 'success',
         title: '생성 완료🎉',
