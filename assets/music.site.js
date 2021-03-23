@@ -19,6 +19,7 @@ function musicsite(site, theme) {
   var music_site_url;
   var songid_dump = "";
   var i;
+  var img_check;
 
   // swal timer
   let timerInterval
@@ -89,32 +90,17 @@ function musicsite(site, theme) {
       imgs[i] = new Image();
       imgs[i].src = playlist_parts[playlist_number[theme][i]];
     }
-    Swal.fire({
-      title: '만드는 중...⏳',
-      html: '플레이리스트를 만들고 있어요',
-      timer: 300*playlist_number[theme].length,
-      timerProgressBar: false,
-      didOpen: () => {
-        Swal.showLoading()
-        timerInterval = setInterval(() => {
-          const content = Swal.getContent()
-          if (content) {
-            const b = content.querySelector('b')
-            if (b) {
-              b.textContent = Swal.getTimerLeft()
-            }
-          }
-        }, 100)
-      },
-      willClose: () => {
-        clearInterval(timerInterval)
+    for(i=0;i<playlist_number[theme].length;i++){
+      img_check = 0;
+      while(img_check = 0){
+        imgs[i].onload = function() {
+          img_check=1;
+        }
       }
-    }).then((result) => {
-      /* Read more about handling dismissals below */
-      for(i=0;i<playlist_number[theme].length;i++){
-        ctx.drawImage(imgs[i], 0, 70*i);
-      }
-    })
+    }
+    for(i=0;i<playlist_number[theme].length;i++){
+      ctx.drawImage(imgs[i], 0, 70*i);
+    }
   }
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
@@ -143,26 +129,25 @@ function musicsite(site, theme) {
     }
     if(site < 5)  location.href = music_site_url;
     else if (site == 5){
-
-          Swal.fire({
-            icon: 'success',
-            title: '생성 완료!🎉',
-            text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
-            imageUrl: canvas.toDataURL(),
-            imageHeight: 700,
-            imageAlt: 'Playlist image',
-            confirmButtonText: '알겠어요',
-            footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
-          }).then((result) => {
-              canvas.width = 0;
-              canvas.height = 0;
-          })
+      Swal.fire({
+        icon: 'success',
+        title: '생성 완료🎉',
+        text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
+        imageUrl: canvas.toDataURL(),
+        imageHeight: 700,
+        imageAlt: 'Playlist image',
+        confirmButtonText: '알겠어요',
+        footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
+      }).then((result) => {
+          canvas.width = 0;
+          canvas.height = 0;
+      })
     }
     if (site > 5 && site < 10){
       Swal.fire({
         icon: 'success',
-        title: '생성 완료!🎉',
-        text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        title: '생성 완료🎉',
+        text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!',
         showDenyButton: true,
         focusConfirm: false,
         focusDeny: true,
@@ -181,8 +166,8 @@ function musicsite(site, theme) {
     else if (site == 10){
       Swal.fire({
         icon: 'success',
-        title: '생성 완료!🎉',
-        text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        title: '생성 완료🎉',
+        text: '혹시 스트리밍 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!',
         imageUrl: canvas.toDataURL(),
         imageHeight: 700,
         imageAlt: 'Playlist image',
@@ -229,8 +214,8 @@ function musicsite(site, theme) {
     if(site == 6){
       Swal.fire({
         icon: 'success',
-        title: '멜론 플레이리스트 생성 완료!',
-        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        title: '멜론 플레이리스트 생성 완료🎉',
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!',
         showDenyButton: true,
         focusConfirm: false,
         focusDeny: true,
@@ -249,8 +234,8 @@ function musicsite(site, theme) {
     else if(site == 7){
       Swal.fire({
         icon: 'success',
-        title: '지니 플레이리스트 생성 완료!',
-        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        title: '지니 플레이리스트 생성 완료🎉',
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!',
         showDenyButton: true,
         focusConfirm: false,
         focusDeny: true,
@@ -269,8 +254,8 @@ function musicsite(site, theme) {
     else if(site == 8 && userAgent.search("macintosh") > -1){
       Swal.fire({
         icon: 'success',
-        title: '벅스 플레이리스트 생성 완료!',
-        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!🍋',
+        title: '벅스 플레이리스트 생성 완료🎉',
+        text: '혹시 가이드를 확인하셨나요? 아직 확인하지 않으셨다면 가이드를 먼저 확인해주세요!',
         showDenyButton: true,
         focusConfirm: false,
         focusDeny: true,
