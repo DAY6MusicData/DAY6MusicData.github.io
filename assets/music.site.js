@@ -89,11 +89,32 @@ function musicsite(site, theme) {
       imgs[i] = new Image();
       imgs[i].src = playlist_parts[playlist_number[theme][i]];
     }
-    for(i=0;i<playlist_number[theme].length;i++){
-      imgs[i].onload = function() {
+    Swal.fire({
+      title: '만드는 중...⏳',
+      html: '플레이리스트를 만들고 있어요',
+      timer: 300*playlist_number[theme].length,
+      timerProgressBar: false,
+      didOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+          const content = Swal.getContent()
+          if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+              b.textContent = Swal.getTimerLeft()
+            }
+          }
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      for(i=0;i<playlist_number[theme].length;i++){
         ctx.drawImage(imgs[i], 0, 70*i);
       }
-    }
+    })
   }
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
@@ -122,25 +143,7 @@ function musicsite(site, theme) {
     }
     if(site < 5)  location.href = music_site_url;
     else if (site == 5){
-      Swal.fire({
-        title: '만드는 중...⏳',
-        html: '플레이리스트를 만들고 있어요',
-        timer: 1000,
-        timerProgressBar: false,
-        didOpen: () => {
-          Swal.showLoading()
-          timerInterval = setInterval(() => {
-            const content = Swal.getContent()
-            if (content) {
-              const b = content.querySelector('b')
-              if (b) {
-                b.textContent = Swal.getTimerLeft()
-              }
-            }
-          }, 100)
-        },
-        willClose: () => {
-          clearInterval(timerInterval)
+
           Swal.fire({
             icon: 'success',
             title: '생성 완료!🎉',
@@ -154,14 +157,6 @@ function musicsite(site, theme) {
               canvas.width = 0;
               canvas.height = 0;
           })
-        }
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          canvas.width = 0;
-          canvas.height = 0;
-        }
-      })
     }
     if (site > 5 && site < 10){
       Swal.fire({
