@@ -160,7 +160,7 @@ function musicsite(site, theme) {
           console.log('I was closed by the timer')
         }
       })
-
+      /*
       Swal.fire({
         icon: 'success',
         title: '생성 완료🎉',
@@ -174,6 +174,7 @@ function musicsite(site, theme) {
           canvas.width = 0;
           canvas.height = 0;
       })
+      */
     }
     if (site > 5 && site < 10){
       Swal.fire({
