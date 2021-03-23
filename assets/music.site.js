@@ -129,7 +129,7 @@ function musicsite(site, theme) {
         title: '생성 완료🎉',
         text: '위의 이미지를 저장하고 플로에서 플레이리스트를 만드세요!',
         imageUrl: canvas.toDataURL(),
-        imageHeight: 700,
+        imageHeight: 35*playlist_number[theme].length,
         imageAlt: 'Playlist image',
         confirmButtonText: '알겠어요',
         footer: '<a href="/intro#플로-플레이리스트-이용-방법" style="color:#28acff">어떻게 플레이리스트를 만드나요?</a>'
