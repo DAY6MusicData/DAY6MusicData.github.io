@@ -91,10 +91,10 @@ function musicsite(site, theme) {
       imgs[i].src = playlist_parts[playlist_number[theme][i]];
     }
     for(i=0;i<playlist_number[theme].length;i++){
-      img_check = 0;
-      while(img_check = 0){
+      img_check = 1;
+      while(img_check){
         imgs[i].onload = function() {
-          img_check=1;
+          img_check = 0;
         }
       }
     }
