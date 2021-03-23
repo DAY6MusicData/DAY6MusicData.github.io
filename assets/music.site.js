@@ -88,7 +88,7 @@ function musicsite(site, theme) {
     for(i=0;i<playlist_number[theme].length;i++){
       imgs[i] = new Image();
       imgs[i].src = playlist_parts[playlist_number[theme][i]];
-      ctx.drawImage(imgs[i], 0, 100*i);
+      ctx.drawImage(imgs[i], 0, 70*i);
     }
   }
 
@@ -121,7 +121,7 @@ function musicsite(site, theme) {
       Swal.fire({
         title: '만드는 중...⏳',
         html: '플레이리스트를 만들고 있어요',
-        timer: 5000,
+        timer: 10000,
         timerProgressBar: false,
         didOpen: () => {
           Swal.showLoading()
