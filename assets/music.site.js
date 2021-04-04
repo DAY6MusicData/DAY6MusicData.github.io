@@ -3,7 +3,6 @@ function musicsite(site, theme) {
   if(theme > 50){
     Swal.fire({
       icon: 'info',
-      title: '',
       text: '아직 서포트 플레이리스트가 업데이트되지 않았어요. 컴백 후 업데이트가 완료되면 트위터에서 소식을 전해드릴게요!',
       footer: '<a href="https://twitter.com/DAY6MusicData" style="color:#28acff">데이식스 음원자료 트위터</a>'
     })
@@ -69,7 +68,7 @@ function musicsite(site, theme) {
   var icon = ["error", "success"];
   var title = ["지원하지 않는 기기예요😥", "플레이리스트 생성 완료🎉"];
 
-  var guide_link = ["", "/guide#멜론-스트리밍-가이드", "/guide#지니-스트리밍-가이드", "/guide#벅스-스트리밍-가이드", "/guide#바이브-스트리밍-가이드", "/guide#플로-스트리밍-가이드"];
+  var guide_link = ["", "/guide#중복곡-안내-멜론", "/guide#중복곡-안내-지니", "/guide#중복곡-안내-벅스", "/guide#중복곡-안내-바이브", "/guide#중복곡-안내-플로"];
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) || site < 3 || ( site == 3 && userAgent.search("macintosh") > -1 ) ) ok = 1; // site test
   else ok = 0;
