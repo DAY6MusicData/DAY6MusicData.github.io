@@ -136,10 +136,15 @@ function musicsite(site, theme) {
           }, 100)
         },
         willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('cleared')
           for(i=0;i<playlist_number[theme].length;i++){
             ctx.drawImage(imgs[i], 0, 70*i);
           }
-          clearInterval(timerInterval)
           Swal.fire({
             icon: 'success',
             title: '생성 완료🎉',
@@ -153,11 +158,6 @@ function musicsite(site, theme) {
               canvas.width = 0;
               canvas.height = 0;
           })
-        }
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('I was closed by the timer')
         }
       })
     }
@@ -185,7 +185,7 @@ function musicsite(site, theme) {
       Swal.fire({
         title: '만드는 중...',
         html: '플레이리스트를 만들고 있어요.',
-        timer: 50*playlist_number[theme].length,
+        timer: 1500+20*playlist_number[theme].length,
         timerProgressBar: false,
         didOpen: () => {
           Swal.showLoading()
@@ -200,10 +200,14 @@ function musicsite(site, theme) {
           }, 100)
         },
         willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
           for(i=0;i<playlist_number[theme].length;i++){
             ctx.drawImage(imgs[i], 0, 70*i);
           }
-          clearInterval(timerInterval)
           Swal.fire({
             icon: 'success',
             title: '생성 완료🎉',
@@ -228,11 +232,6 @@ function musicsite(site, theme) {
             canvas.height = 0;
           })
         }
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('I was closed by the timer')
-        }
       })
     }
   }
@@ -245,8 +244,8 @@ function musicsite(site, theme) {
       if (site == 1) location.href = music_site_url;
     }
     else if(site == 2 || site == 7){
-      for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + melon_songid[playlist_number[theme][i]] + ';';
-      songid_dump = songid_dump + melon_songid[playlist_number[theme][playlist_number[theme].length-1]];
+      for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + genie_songid[playlist_number[theme][i]] + ';';
+      songid_dump = songid_dump + genie_songid[playlist_number[theme][playlist_number[theme].length-1]];
       music_site_url = genie_web + songid_dump;
       if (site == 2) window.open( music_site_url, '', 'scrollbars=no, width=600, height=600');
     } 
