@@ -1,4 +1,15 @@
 function musicsite(site, theme) {
+
+  if(theme > 50){
+    Swal.fire({
+      icon: 'info',
+      title: '',
+      text: '아직 서포트 플레이리스트가 업데이트되지 않았어요. 컴백 후 업데이트가 완료되면 트위터에서 소식을 전해드릴게요!',
+      footer: '<a href="https://twitter.com/DAY6MusicData" style="color:#28acff">데이식스 음원자료 트위터</a>'
+    })
+    return 0;
+  }
+
   // device test
   var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
   var userAgent = navigator.userAgent.toLowerCase();
@@ -91,16 +102,6 @@ function musicsite(site, theme) {
     icon: icon[ok],
     title: title[ok]
   })
-
-  if(theme > 50){
-    Swal.fire({
-      icon: 'info',
-      title: '',
-      text: '아직 업데이트하지 않은 플레이리스트입니다. 컴백 후 업데이트가 완료되면 데이식스 음원자료 트위터에서 소식을 전해드려요!',
-      footer: '<a href="https://twitter.com/DAY6MusicData" style="color:#28acff">데이식스 음원자료 트위터</a>'
-    })
-    return 0;
-  }
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
     // site 1 - 4 case
