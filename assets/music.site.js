@@ -4,7 +4,8 @@ function musicsite(site, theme) {
     Swal.fire({
       icon: 'info',
       text: '아직 서포트 플레이리스트가 업데이트되지 않았어요. 컴백 후 업데이트가 완료되면 트위터에서 소식을 전해드릴게요!',
-      footer: '<a href="https://twitter.com/DAY6MusicData" style="color:#28acff">데이식스 음원자료 트위터</a>'
+      footer: '<a href="https://twitter.com/DAY6MusicData" style="color:#28acff">데이식스 음원자료 트위터</a>',
+      confirmButtonText: '알겠어요!'
     })
     return 0;
   }
