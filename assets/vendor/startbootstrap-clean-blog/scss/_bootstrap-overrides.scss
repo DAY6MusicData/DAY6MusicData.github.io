@@ -97,47 +97,27 @@
 .p_btn {
   flex: 1 1 auto;
   margin: 2px;
-  padding: 5px;
+  padding: 4px;
   text-align: center;
   transition: 1s;
-  background-size: 200% auto;
-  color: white;
-  text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
-  box-shadow: 0 5px 20px #ddd;
+  background-size: 400% 400%;
+  color: #222;
   border-radius: 50px;
   text-decoration: none;
-  border: 0;
-  outline: 0;
+  border: 1px solid #f87e1d;
+  box-shadow: 0 0px 5px #f6f6f6;
  }
 
 .p_btn:hover {
-  background-position: right  center;
+  background-position: 99%  center;
   text-decoration: none;
   color: white;
   box-shadow: 0 5px 20px #bbb;
+  border: 1px solid transparent;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 
 .p_btn:focus { outline: none; }
-
-.p_btn-1 {
-  background-image: linear-gradient(to right, #000e73 0%, #314cb3 51%, #7d49a7 100%);
-}
-
-.p_btn-2 {
-  background-image: linear-gradient(to right, #344bb2 0%, #af559d 51%, #e25d8a 100%);
-}
-
-.p_btn-3 {
-  background-image: linear-gradient(to right, #b2569d 0%, #f1795e 51%, #f09d44 100%);
-}
-
-.p_btn-4 {
-  background-image: linear-gradient(to right, #000e73 0%, #154eb7 25%, #7346a9 50%, #cd5d98 100%);
-}
-
-.p_btn-5 {
-  background-image: linear-gradient(to right, #7346a9 0%, #cd5d98 25%, #f1795e 50%, #f09d44 100%);
-}
 
 .m_container {
   display: flex;
