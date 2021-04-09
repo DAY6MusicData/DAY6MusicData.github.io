@@ -60,6 +60,7 @@
   border: 1px solid transparent;
   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
+
 .s_btn:focus { outline: none; }
 
 .s_btn-1 {
@@ -117,8 +118,6 @@
   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 
-.p_btn:focus { outline: none; }
-
 .m_container {
   display: flex;
   flex-wrap: wrap;
@@ -166,7 +165,6 @@
   padding: 20px;
   text-align: center;
   text-transform: uppercase;
-  transition: 3s;
   background-size: 200% auto;
   color: white !important;
   text-shadow: 0px 0px 10px rgba(0,0,0,0.2);
@@ -177,42 +175,48 @@
   outline: 0;
 }
 
-.banner_btn:hover {
-  background-position: right  center;
-  text-decoration: none;
-  color: white;
-  box-shadow: 0 3px 5px #ccc;
-}
-
 .banner_btn:focus { outline: none; }
 
 .banner_btn-1 {
   background-image: linear-gradient(to right, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
-  animation: animatedgradient 6s ease infinite;
   background-size: 400% 400%;
+  -webkit-animation: animatedgradient 6s ease infinite;
+  -moz-animation: animatedgradient 6s ease infinite;
+  -o-animation: animatedgradient 6s ease infinite;
+  animation: animatedgradient 6s ease infinite;
 }
 
 .banner_btn-2 {
   background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
-  animation: animatedgradient 6s ease infinite;
   background-size: 400% 400%;
+  -webkit-animation: animatedgradient 6s ease infinite;
+  -moz-animation: animatedgradient 6s ease infinite;
+  -o-animation: animatedgradient 6s ease infinite;
+  animation: animatedgradient 6s ease infinite;
 }
 
 .banner_btn-3 {
-  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-  animation: animatedgradient 6s ease infinite;
-  background-size: 400% 400%;
+  background-image: linear-gradient(to right, #b5b7f0 0%, #a8ccf0 100%);
+  background-size: 100% 100%;
 }
 
-
+@-webkit-keyframes animatedgradient {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+@-moz-keyframes animatedgradient {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
+@-o-keyframes animatedgradient {
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
+}
 @keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
 }
