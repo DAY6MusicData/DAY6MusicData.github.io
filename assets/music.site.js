@@ -124,12 +124,12 @@ function musicsite(site, theme) {
       songid_dump = songid_dump + bugs_songid[playlist_number[theme][playlist_number[theme].length-1]];
       music_site_url = bugs + songid_dump;
     }
-    else if(site == 4){
+    else if(site == 4 || site == 9){
       for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + vibe_songid[playlist_number[theme][i]] + ',';
       songid_dump = songid_dump + vibe_songid[playlist_number[theme][playlist_number[theme].length-1]];
       music_site_url = vibe + songid_dump;
+      if(theme == 51) music_site_url = "/support_vibe";
     }
-    else if(site == 9) music_site_url = "/support_vibe";
     if(site < 5)  location.href = music_site_url;
     else if (site == 5){
       Swal.fire({
