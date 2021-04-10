@@ -8,6 +8,14 @@
 <script src="{{"/assets/music.site.js" | relative_url }}"></script>
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 
+<script>
+  $("img.lazy").lazyload({
+    effect : "fadeIn",
+    threshold : 250,
+   placeholder:"/img/ld_img.gif"
+  });
+</script>
+
 {% if page.url contains 'contact' %}
   <!-- Form Validation -->
   <script src="{{"/assets/vendor/startbootstrap-clean-blog/js/jqBootstrapValidation.js" | relative_url }}"></script>
@@ -84,12 +92,6 @@
     /*When clicking on Full hide fail/success boxes */
     $('#name').focus(function () {
       $('#success').html('');
-    });
-
-    $("img.lazy").lazyload({
-      effect : "fadeIn",
-      threshold : 250,
-      placeholder:"/img/ld_img.gif"
     });
 
   </script>
