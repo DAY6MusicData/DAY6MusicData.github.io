@@ -83,9 +83,6 @@ function musicsite(site, theme) {
     var canvas = document.querySelector("#playlist"),
     ctx = canvas.getContext('2d');
 
-    canvas.width = 350;
-    canvas.height = 70*playlist_number[theme].length;
-
     var imgs = new Array();
     for(i=0;i<playlist_number[theme].length;i++){
       imgs[i] = new Image();
@@ -158,7 +155,9 @@ function musicsite(site, theme) {
       }).then((result) => {
         /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('cleared')
+          canvas.width = 350;
+          canvas.height = 70*playlist_number[theme].length;
+
           for(i=0;i<playlist_number[theme].length;i++){
             ctx.drawImage(imgs[i], 0, 70*i);
           }
@@ -221,6 +220,9 @@ function musicsite(site, theme) {
         }
       }).then((result) => {
         /* Read more about handling dismissals below */
+        canvas.width = 350;
+        canvas.height = 70*playlist_number[theme].length;
+
         if (result.dismiss === Swal.DismissReason.timer) {
           for(i=0;i<playlist_number[theme].length;i++){
             ctx.drawImage(imgs[i], 0, 70*i);
