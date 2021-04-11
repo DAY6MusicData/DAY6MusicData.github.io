@@ -72,7 +72,7 @@ function musicsite(site, theme) {
   var icon = ["error", "success"];
   var title = ["지원하지 않는 기기예요😥", "플레이리스트 생성 완료🎉"];
 
-  var guide_link = ["", "/guide#중복곡-안내-멜론", "/guide#중복곡-안내-지니", "/guide#중복곡-안내-벅스", "/guide#중복곡-안내-바이브", "/guide#중복곡-안내-플로"];
+  var guide_link = ["", "/guide#멜론-스트리밍-가이드", "/guide#지니-스트리밍-가이드", "/guide#벅스-스트리밍-가이드", "/guide#바이브-스트리밍-가이드", "/guide#플로-스트리밍-가이드"];
 
   if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) || site < 3 || ( site == 3 && userAgent.search("macintosh") > -1 ) ) ok = 1; // site test
   else ok = 0;
@@ -133,7 +133,7 @@ function musicsite(site, theme) {
       Swal.fire({
         title: '만드는 중...',
         html: '플레이리스트를 만들고 있어요.',
-        timer: 50*playlist_number[theme].length,
+        timer: 1500+20*playlist_number[theme].length,
         timerProgressBar: false,
         didOpen: () => {
           Swal.showLoading()
